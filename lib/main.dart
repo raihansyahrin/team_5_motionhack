@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:team_5_motionhack/common/theme/theme.dart';
 import 'package:team_5_motionhack/ui/splash/splash_page.dart';
 
 void main() {
@@ -19,13 +20,13 @@ class MyApp extends StatelessWidget {
         systemNavigationBarIconBrightness: Brightness.dark,
       ),
     );
-    return const AnnotatedRegion(
+    return AnnotatedRegion(
       value: SystemUiOverlayStyle.dark,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        // theme: themeData,
-        home: SplashPage(),
+        title: 'Team 5',
+        theme: themeData,
+        home: const SplashPage(),
       ),
     );
   }
