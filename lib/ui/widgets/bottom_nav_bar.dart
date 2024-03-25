@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:team_5_motionhack/common/styles/colors.dart';
 import 'package:team_5_motionhack/ui/consultant/consultant_page.dart';
 import 'package:team_5_motionhack/ui/history/history_page.dart';
-import 'package:team_5_motionhack/ui/investor/investor_page.dart';
+import 'package:team_5_motionhack/ui/home/home_page.dart';
+import 'package:team_5_motionhack/ui/investment/investment_page.dart';
 import 'package:team_5_motionhack/ui/profile/profile_page.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -26,10 +29,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
   }
 
   final List<Widget> _pages = [
-    const InvestorPage(),
+    const HomePage(),
+    const InvestmentPage(),
     const ConsultantPage(),
     const HistoryPage(),
-    const ProfilePage(),
   ];
 
   @override
@@ -37,32 +40,43 @@ class _BottomNavBarState extends State<BottomNavBar> {
     return Scaffold(
       body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.blue,
+        elevation: 0,
+        type: BottomNavigationBarType.fixed, // Tidak ada animasi membesar
+        enableFeedback: false,
+        showUnselectedLabels: true,
         currentIndex: _currentIndex,
-        selectedItemColor: kColorScheme.primary,
-        unselectedItemColor: kColorScheme.primary,
-        unselectedLabelStyle: TextStyle(color: kColorScheme.primary),
+        selectedItemColor: const Color(0xFF00584B),
+        unselectedItemColor: Colors.grey,
+
+        selectedIconTheme: const IconThemeData(
+          color: Colors.green,
+          fill: 0.9,
+        ),
+        selectedLabelStyle: const TextStyle(height: 2.5, fontSize: 12),
+        unselectedLabelStyle: const TextStyle(fontSize: 12, height: 2.5),
+        backgroundColor: const Color.fromARGB(255, 116, 247, 143),
+
         onTap: (index) {
           setState(() {
             _currentIndex = index;
           });
         },
-        items: const [
+        items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
+            icon: SvgPicture.asset('assets/icons/home_navbar.svg'),
+            label: 'Beranda',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.work),
-            label: 'Job Saya',
+            icon: SvgPicture.asset('assets/icons/investasi_navbar.svg'),
+            label: 'Investasi',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.chat),
-            label: 'Pesan',
+            icon: SvgPicture.asset('assets/icons/konsultasi_navbar.svg'),
+            label: 'Konsultasi',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profil',
+            icon: SvgPicture.asset('assets/icons/history_navbar.svg'),
+            label: 'Riwayat',
           ),
         ],
       ),
