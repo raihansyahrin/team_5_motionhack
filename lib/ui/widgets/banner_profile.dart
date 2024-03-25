@@ -15,7 +15,6 @@ class _ProfileKonsultasiState extends State<ProfileKonsultasi> {
       child: Padding(
         padding: EdgeInsets.symmetric(
           horizontal: 30,
-          vertical: 15,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -32,7 +31,7 @@ class _ProfileKonsultasiState extends State<ProfileKonsultasi> {
                         Text(
                           "Franco",
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 16,
                             fontFamily: 'Outfit',
                             fontWeight: FontWeight.w400,
                           ),
@@ -50,7 +49,7 @@ class _ProfileKonsultasiState extends State<ProfileKonsultasi> {
           border: Border(
               bottom: BorderSide(
                 width: 0.4,
-                color: Color(0xFFC9C9C9),
+                color: Color(0xFFABABAB),
               )
           ),
           color: Color(0xF8F8FF)

@@ -5,6 +5,7 @@ import 'package:team_5_motionhack/ui/widgets/banner_konsultasi_button.dart';
 import 'package:flutter/services.dart';
 import 'package:team_5_motionhack/ui/widgets/banner_profile.dart';
 import 'package:team_5_motionhack/ui/widgets/banner_pembayaran.dart';
+import 'package:team_5_motionhack/ui/widgets/bottom_nav_bar.dart';
 import 'package:team_5_motionhack/ui/widgets/button_Selanjutnya.dart';
 import 'package:team_5_motionhack/ui/widgets/notifikasi_pembayaranBerhasil.dart';
 
@@ -42,6 +43,7 @@ class ConsultantPage extends StatelessWidget {
             )
         ),
       ),
+      // kurang bottom nav bar
     );
   }
 }

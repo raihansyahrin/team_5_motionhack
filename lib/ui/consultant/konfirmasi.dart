@@ -135,6 +135,29 @@ class _KonfirmasiState extends State<Konfirmasi> {
                       ),
                       SizedBox(height: 176,),
                       buttonSelanjutnya(),
+                      SizedBox(height: 17,),
+                      Container(
+                      width: double.infinity,
+                      height: 48,
+                       child: Center(
+                         child:  Text(
+                          "Batalkan",
+                          style : TextStyle(
+                            fontSize: 16,
+                            color:Color(0xFF00584B),
+                            fontWeight: FontWeight.w500,
+                          )
+                      ),
+                    ),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(8.0),
+                        border: Border.all(
+                          color: Color(0xFF00584B),
+                          width: 1,
+                        )
+                    )
+                    ),
                     ],
                   )
               )
