@@ -3,6 +3,57 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../styles/colors.dart';
 
+TextStyle lightText8 = GoogleFonts.outfit(
+  fontSize: 8,
+  fontWeight: FontWeight.w300,
+  color: AppColors.neutralColors[0],
+);
+TextStyle lightText10 = GoogleFonts.outfit(
+  fontSize: 10,
+  fontWeight: FontWeight.w300,
+  color: AppColors.neutralColors[0],
+);
+TextStyle lightText12 = GoogleFonts.outfit(
+  fontSize: 12,
+  fontWeight: FontWeight.w300,
+  color: AppColors.neutralColors[0],
+);
+TextStyle lightText14 = GoogleFonts.outfit(
+  fontSize: 14,
+  fontWeight: FontWeight.w300,
+  color: AppColors.neutralColors[0],
+);
+
+TextStyle lightText16 = GoogleFonts.outfit(
+  fontSize: 16,
+  fontWeight: FontWeight.w300,
+  color: AppColors.neutralColors[0],
+);
+TextStyle lightText18 = GoogleFonts.outfit(
+  fontSize: 18,
+  fontWeight: FontWeight.w300,
+  color: AppColors.neutralColors[0],
+);
+TextStyle lightText20 = GoogleFonts.outfit(
+  fontSize: 20,
+  fontWeight: FontWeight.w300,
+  color: AppColors.neutralColors[0],
+);
+TextStyle lightText22 = GoogleFonts.outfit(
+  fontSize: 22,
+  fontWeight: FontWeight.w300,
+  color: AppColors.neutralColors[0],
+);
+TextStyle lightText24 = GoogleFonts.outfit(
+  fontSize: 24,
+  fontWeight: FontWeight.w300,
+  color: AppColors.neutralColors[0],
+);
+TextStyle lightText26 = GoogleFonts.outfit(
+  fontSize: 26,
+  fontWeight: FontWeight.w300,
+  color: AppColors.neutralColors[0],
+);
 TextStyle regularText8 = GoogleFonts.outfit(
   fontSize: 8,
   color: AppColors.neutralColors[0],
