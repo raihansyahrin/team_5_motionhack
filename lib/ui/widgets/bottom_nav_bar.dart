@@ -71,7 +71,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             label: 'Investasi',
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset('assets/icons/konsultasi_navbar.svg'),
+            icon: SvgPicture.asset('assets/icons/consultant_navbar.svg'),
             label: 'Konsultasi',
           ),
           BottomNavigationBarItem(
