@@ -22,5 +22,12 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/icons/
+    - assets/LogoMandiri.png
+    - assets/LogoBCA.png
+    - assets/LogoBNI.png
+    - assets/LogoBRI.png
+    - assets/LogoGopay.png
+    - assets/LogoDana.png
+    - assets/LogoLinkAja.png
+    - assets/Banner.png
     - assets/images/
