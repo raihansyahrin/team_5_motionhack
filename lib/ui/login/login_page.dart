@@ -181,7 +181,7 @@ class _LoginPageState extends State<LoginPage> {
                                   MaterialPageRoute(
                                     builder: (context) => const BottomNavBar(),
                                   ),
-                                  ModalRoute.withName('/'),
+                                  (route) => false,
                                 );
                               }
                             },
@@ -191,8 +191,8 @@ class _LoginPageState extends State<LoginPage> {
                             fontWeight: FontWeight.w600,
                             minHeight: 47,
                             backgroundColor: isEmailEmpty || isPasswordEmpty
-                                ? const Color(0xFF001449).withOpacity(0.5)
-                                : const Color(0xFF001449),
+                                ? const Color(0xFF00584B).withOpacity(0.5)
+                                : const Color(0xFF00584B),
                             borderRadius: 8,
                           ),
                           const SizedBox(
