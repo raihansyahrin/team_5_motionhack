@@ -26,6 +26,7 @@ class CustomTextField extends StatelessWidget {
     this.validator,
     this.isPasswordVisible,
     required this.isPasswordEmpty,
+    final Function(String)? onChanged,
   });
 
   final String label;
@@ -35,7 +36,7 @@ class CustomTextField extends StatelessWidget {
   final int maxLines;
   final int? maxLength;
   final bool addSpace;
-  final Future Function()? onTap;
+  final Function()? onTap;
   final TextInputType textInputType;
   final bool isPassword;
   final bool isPasswordHide;

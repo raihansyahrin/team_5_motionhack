@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:team_5_motionhack/common/styles/colors.dart';
-import 'package:team_5_motionhack/common/theme/font.dart';
 import 'package:team_5_motionhack/data/local/preferences_utils.dart';
 import 'package:team_5_motionhack/ui/widgets/bottom_nav_bar.dart';
 
@@ -65,14 +65,25 @@ class _SplashPageState extends State<SplashPage> {
     return Scaffold(
       body: Container(
         alignment: Alignment.center,
-        decoration: const BoxDecoration(
-          color: Color.fromARGB(255, 71, 85, 239),
+        decoration: BoxDecoration(
+          color: kColorScheme.background,
         ),
         child: Center(
-          child: Text(
-            'Splash Screen',
-            style: boldText24.copyWith(
-              color: kColorScheme.background,
+          child: Padding(
+            padding: const EdgeInsets.all(50.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SvgPicture.asset(
+                  'assets/icons/logo_splash.svg',
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                SvgPicture.asset(
+                  'assets/icons/text_logo_splash.svg',
+                ),
+              ],
             ),
           ),
         ),
