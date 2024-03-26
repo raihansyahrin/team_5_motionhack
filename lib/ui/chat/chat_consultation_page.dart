@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:team_5_motionhack/common/theme/font.dart';
+import 'package:team_5_motionhack/ui/chat/chat_page.dart';
 import 'package:team_5_motionhack/ui/widgets/bottom_nav_bar.dart';
 
 class ChatConsultationPage extends StatelessWidget {
@@ -19,9 +20,7 @@ class ChatConsultationPage extends StatelessWidget {
             Navigator.pushAndRemoveUntil(
               context,
               MaterialPageRoute(
-                builder: (context) => const BottomNavBar(
-                  initialPage: 0,
-                ),
+                builder: (context) => const ChatPage(),
               ),
               (route) => false,
             );
