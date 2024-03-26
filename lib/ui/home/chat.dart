@@ -1,14 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'dart:async';
-import 'package:team_5_motionhack/ui/widgets/banner_konsultasi_button.dart';
-import 'package:flutter/services.dart';
-import 'package:team_5_motionhack/ui/widgets/banner_profile.dart';
-import 'package:team_5_motionhack/ui/widgets/banner_pembayaran.dart';
-import 'package:team_5_motionhack/ui/widgets/button_Selanjutnya.dart';
-import 'package:team_5_motionhack/ui/widgets/custom_app_bar.dart';
 import 'package:team_5_motionhack/ui/widgets/header_navigator.dart';
-import 'package:team_5_motionhack/ui/widgets/notifikasi_pembayaranBerhasil.dart';
+import 'package:team_5_motionhack/ui/widgets/list_consultant_widget.dart';
 
 class Chat extends StatefulWidget {
   const Chat({super.key});
@@ -23,66 +16,81 @@ class _ChatState extends State<Chat> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 34, horizontal: 24),
+          padding: const EdgeInsets.symmetric(vertical: 34, horizontal: 24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 32),
+              const SizedBox(height: 32),
               Container(
                 height: 60,
                 width: double.infinity,
-                color: Color(0xFFF8F8FF),
+                color: const Color(0xFFF8F8FF),
                 child: Row(
                   children: [
                     IconButton(
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      icon: Icon(Icons.arrow_back_ios_new_outlined, size: 20),
+                      icon: const Icon(Icons.arrow_back_ios_new_outlined,
+                          size: 20),
                     ),
-                    SizedBox(width: 127,),
-                    Text(
+                    const SizedBox(
+                      width: 127,
+                    ),
+                    const Text(
                       'Chat',
                       style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
-                          fontFamily: 'Outfit'
-                      ),
+                          fontFamily: 'Outfit'),
                     ),
                   ],
                 ),
               ),
-               Header(kiri: true, kanan: false, namaKanan: 'Investor', namaKiri: 'Konsultasi'),
-              SizedBox(height: 5,),
+              const Header(
+                  kiri: true,
+                  kanan: false,
+                  namaKanan: 'Investor',
+                  namaKiri: 'Konsultasi'),
+              const SizedBox(
+                height: 5,
+              ),
               Stack(
                 children: [
-                  BannerKonsultasi(nama: 'Franco', posisi: 'Konsultan Keuangan', pic: 'assets/PPic.svg'),
-                  Container(width: double.infinity, height: 74,
-                    child:Row(
+                  ListConsultantWidget(
+                      nama: 'Franco',
+                      posisi: 'Konsultan Keuangan',
+                      pic: 'assets/PPic.svg'),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 74,
+                    child: Row(
                       children: [
-                        SizedBox(width: 340,),
-                        Container(width: 16, height: 16,
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Color(0xFFFC5C65)
-                          ),
-                          child: Center(
-                            child: Text('2',
-                              style: TextStyle(
-                                fontSize: 10,
-                                fontFamily: 'Outfit',
-                                fontWeight: FontWeight.w400,
-                                color: Colors.white,
+                        const SizedBox(
+                          width: 340,
+                        ),
+                        Container(
+                            width: 16,
+                            height: 16,
+                            decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Color(0xFFFC5C65)),
+                            child: const Center(
+                              child: Text(
+                                '2',
+                                style: TextStyle(
+                                  fontSize: 10,
+                                  fontFamily: 'Outfit',
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.white,
+                                ),
                               ),
-                            ),
-                          )
-                        )
+                            ))
                       ],
-                      ),
-                    )
+                    ),
+                  )
                 ],
               )
-
             ],
           ),
         ),
@@ -90,4 +98,3 @@ class _ChatState extends State<Chat> {
     );
   }
 }
-
