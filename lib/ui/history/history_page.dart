@@ -44,28 +44,28 @@ class HistoryPage extends StatelessWidget {
                               children: [
                                 BannerHistory(
                                   nama: 'Pengajuan Proposal',
-                                  pic: 'assets/icons/konsultasi_icon.svg',
+                                  pic: 'assets/icons/historylist_icon.svg',
                                   posisi: '5 April 2024, 12.00',
                                   pengajuan: true,
                                   terima: true,
                                 ),
                                 BannerHistory(
                                   nama: 'Pengajuan Proposal',
-                                  pic: 'assets/icons/konsultasi_icon.svg',
+                                  pic: 'assets/icons/historylist_icon.svg',
                                   posisi: '5 April 2024, 12.00',
                                   pengajuan: true,
                                   terima: false,
                                 ),
                                 BannerHistory(
                                   nama: 'Laporan Mingguan',
-                                  pic: 'assets/icons/konsultasi_icon.svg',
+                                  pic: 'assets/icons/historylist_icon.svg',
                                   posisi: '5 April 2024, 12.00',
                                   pengajuan: false,
                                   terima: true,
                                 ),
                                 BannerHistory(
                                   nama: 'Pengajuan Proposal',
-                                  pic: 'assets/icons/konsultasi_icon.svg',
+                                  pic: 'assets/icons/historylist_icon.svg',
                                   posisi: '5 April 2024, 12.00',
                                   pengajuan: false,
                                   terima: false,
@@ -89,14 +89,14 @@ class HistoryPage extends StatelessWidget {
                               children: [
                                 BannerHistory(
                                   nama: 'Konsultasi',
-                                  pic: 'assets/icons/konsultasi_icon.svg',
+                                  pic: 'assets/icons/historylist_icon.svg',
                                   posisi: '5 April 2024, 12.00',
                                   pengajuan: false,
                                   terima: false,
                                 ),
                                 BannerHistory(
                                   nama: 'Konsultasi',
-                                  pic: 'assets/icons/konsultasi_icon.svg',
+                                  pic: 'assets/icons/historylist_icon.svg',
                                   posisi: '5 April 2024, 12.00',
                                   pengajuan: false,
                                   terima: false,
