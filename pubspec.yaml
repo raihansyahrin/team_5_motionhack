@@ -29,5 +29,10 @@ flutter:
     - assets/LogoGopay.png
     - assets/LogoDana.png
     - assets/LogoLinkAja.png
-    - assets/Banner.png
+    - assets/Banner.svg
+    - assets/PPic.svg
+    - assets/PPic.png
+    - assets/BGBell.svg
+    - assets/icons/konsultasi_icon.svg
+    - assets/icons/Bell.svg
     - assets/icons/send_icon.svg

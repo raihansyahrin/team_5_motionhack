@@ -8,31 +8,31 @@ import 'package:team_5_motionhack/ui/widgets/banner_profile.dart';
 import 'package:team_5_motionhack/ui/widgets/banner_pembayaran.dart';
 import 'package:team_5_motionhack/ui/widgets/button_Selanjutnya.dart';
 import 'package:team_5_motionhack/ui/widgets/notifikasi_pembayaranBerhasil.dart';
-class ProfilKonsultan extends StatefulWidget {
-  const ProfilKonsultan({super.key});
+class ProfilInvestor extends StatefulWidget {
+  const ProfilInvestor({super.key});
 
   @override
-  State<ProfilKonsultan> createState() => _ProfilKonsultanState();
+  State<ProfilInvestor> createState() => _ProfilInvestorState();
 }
 
-class _ProfilKonsultanState extends State<ProfilKonsultan> {
+class _ProfilInvestorState extends State<ProfilInvestor> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Stack(
-            children: [
-              Column(
-                children: [
-                  SizedBox(height: 125,),
-                  Stack(
-                    children: [
-                      Container(width: double.infinity, height: 120, color: Color(0xFF96BBB5),),
-                      SvgPicture.asset('assets/Banner.svg'),
-                    ],
-                  ),
-                ],
-              ),
+          children: [
+            Column(
+              children: [
+                SizedBox(height: 125,),
+                Stack(
+                  children: [
+                    Container(width: double.infinity, height: 120, color: Color(0xFF96BBB5),),
+                    SvgPicture.asset('assets/Banner.svg'),
+                  ],
+                ),
+              ],
+            ),
             Padding(
               padding: EdgeInsets.symmetric(vertical: 34, horizontal: 24),
               child: Column(
@@ -52,7 +52,7 @@ class _ProfilKonsultanState extends State<ProfilKonsultan> {
                         ),
                         SizedBox(width: 89,),
                         Text(
-                          "Profil Konsultan",
+                          "Profil Investor",
                           style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
@@ -68,7 +68,7 @@ class _ProfilKonsultanState extends State<ProfilKonsultan> {
                   Row(
                     children: [
                       Text(
-                        "Nama",
+                        'Nama',
                         style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
@@ -77,7 +77,7 @@ class _ProfilKonsultanState extends State<ProfilKonsultan> {
                       ),
                       SizedBox(width: 116,),
                       Text(
-                        "Pendidikan",
+                        'Nama Perusahaan',
                         style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
@@ -88,9 +88,11 @@ class _ProfilKonsultanState extends State<ProfilKonsultan> {
                   ),
                   SizedBox(height: 4,),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Franco",
+                        'Carla',
                         style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
@@ -98,12 +100,12 @@ class _ProfilKonsultanState extends State<ProfilKonsultan> {
                             color: Color(0xFF7F7F7F)
                         ),
                       ),
-                      SizedBox(width: 110,),
+                      SizedBox(width: 120,),
                       Container(
                         width: 157,
                         height: 46,
                         child: Text(
-                          "S2 Akuntansi Universitas Indonesia",
+                          'PT Sampoerna',
                           style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
@@ -116,7 +118,7 @@ class _ProfilKonsultanState extends State<ProfilKonsultan> {
                   ),
                   SizedBox(height: 18,),
                   const Text(
-                    "Bidang Keahlian",
+                    'Pengalaman dan Keahlian Khusus',
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
@@ -124,14 +126,18 @@ class _ProfilKonsultanState extends State<ProfilKonsultan> {
                     ),
                   ),
                   SizedBox(height: 4,),
-                  const Text(
-                    "Konsultan Keuangan",
+                  Container(
+                    width: double.infinity,
+                    height: 60,
+                    child: Text(
+                    'Menjabat sebagai chairman dalam Komite Pemantau Manajemen Resiko dengan keahlian dalam menganalisa resiko finansial',
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
                       fontFamily: 'Outfit',
                       color: Color(0xFF7F7F7F),
                     ),
+                  ),
                   ),
                   SizedBox(height: 42,),
                   const Text(
@@ -158,7 +164,7 @@ class _ProfilKonsultanState extends State<ProfilKonsultan> {
                           Icon(Icons.file_copy_outlined, size: 20, color: Color(0xFF00584B),),
                           SizedBox(width: 14,),
                           const Text(
-                            "CV- Franco.pdf",
+                            "CV- Carla.pdf",
                             style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400,
@@ -195,7 +201,7 @@ class _ProfilKonsultanState extends State<ProfilKonsultan> {
                           Icon(Icons.file_copy_outlined, size: 20, color: Color(0xFF00584B),),
                           SizedBox(width: 14,),
                           const Text(
-                            "Portfolio- Franco.pdf",
+                            "Portfolio- Carla.pdf",
                             style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400,
@@ -207,13 +213,13 @@ class _ProfilKonsultanState extends State<ProfilKonsultan> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 152,),
+                  SizedBox(height: 115,),
                   Container(
                       width: double.infinity,
                       height: 48,
                       child: Center(
                         child:  Text(
-                            "Daftar Konsultasi",
+                            'Ajukan Proposal',
                             style : TextStyle(
                               fontSize: 16,
                               color: Color(0xFFF8F8FF),
@@ -229,7 +235,7 @@ class _ProfilKonsultanState extends State<ProfilKonsultan> {
                 ],
               ),
             )
-            ],
+          ],
         ),
       ),
     );
