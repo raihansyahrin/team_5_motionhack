@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:team_5_motionhack/common/theme/font.dart';
-import 'package:team_5_motionhack/ui/consultant/profile_consultant_page.dart';
+import 'package:team_5_motionhack/ui/consultant/profile_consultant/profile_consultant_page.dart';
 
 class ListConsultantWidget extends StatefulWidget {
-  const ListConsultantWidget({super.key});
+  final String nama;
+  final String posisi;
+  final String pic;
+  final bool? isConsultant;
+  const ListConsultantWidget({
+    super.key,
+    required this.nama,
+    required this.posisi,
+    required this.pic,
+    this.isConsultant = false,
+  });
 
   @override
   State<ListConsultantWidget> createState() => _ListConsultantWidgetState();
@@ -23,7 +33,10 @@ class _ListConsultantWidgetState extends State<ListConsultantWidget> {
       },
       child: Container(
         height: 72,
-        width: 333,
+        width: double.infinity,
+        padding: const EdgeInsets.symmetric(
+          horizontal: 21,
+        ),
         decoration: const BoxDecoration(
           border: Border(
             bottom: BorderSide(
@@ -33,51 +46,62 @@ class _ListConsultantWidgetState extends State<ListConsultantWidget> {
           ),
           color: Color(0x00f8f8ff),
         ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(50),
-                child: Image.asset(
-                  'assets/images/image.png',
-                  height: 42,
-                ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(50),
+              // child: Image.asset(
+              //   'assets/images/image.png',
+              //   height: 42,
+              // ),
+              child: Image.asset(
+                widget.pic,
+                height: 42,
               ),
-              const SizedBox(
-                width: 15,
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const SizedBox(
-                        height: 5,
+            ),
+            const SizedBox(
+              width: 15,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    // Text(
+                    //   'Franco',
+                    //   style: regularText14,
+                    // ),
+                    Text(
+                      widget.nama,
+                      style: regularText14,
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    // Text(
+                    //   'Konsultan Keuangan',
+                    //   style: regularText12.copyWith(
+                    //     color: Colors.grey,
+                    //   ),
+                    // ),
+                    Text(
+                      widget.posisi,
+                      style: regularText12.copyWith(
+                        color: Colors.grey,
                       ),
-                      Text(
-                        'Franco',
-                        style: regularText14,
-                      ),
-                      const SizedBox(
-                        height: 5,
-                      ),
-                      Text(
-                        'Konsultan Keuangan',
-                        style: regularText12.copyWith(
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ],
-                  )
-                ],
-              )
-            ],
-          ),
+                    ),
+                  ],
+                )
+              ],
+            )
+          ],
         ),
       ),
     );
