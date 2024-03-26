@@ -32,18 +32,12 @@ Password : dummy password
 ## Screenshots
 
 ![Splash Screen](./screenshot/splash_screen.PNG)
-![Splash Screen2](./screenshot/splash_screen2.jpeg)
-![Welcome Before Login](./screenshot/welcome_before_login.jpeg)
-
-![Register](./screenshot/register.jpeg)
-
-![Login](./screenshot/login.jpeg)
-
-![Login Success](./screenshot/login_success.jpeg)
-![Welcome](./screenshot/welcome.jpeg)
-![List Books](./screenshot/list_books.jpeg)
-![Upload Books](./screenshot/upload_books.jpeg)
-![Detail Books](./screenshot/detail_books.jpeg)
-![Edit Books](./screenshot/edit_data.jpeg)
-![Delete Books](./screenshot/delete_books.jpeg)
-![Logout](./screenshot/logout.jpeg)
+![Login](./screenshot/login.PNG)
+![Login Failed](./screenshot/login_failed.PNG)
+![Register](./screenshot/register.PNG)
+![Home Page](./screenshot/home_page.PNG)
+![Investment Page](./screenshot/investment_page.PNG)
+![Consultant Page](./screenshot/consultant_page.PNG)
+![History Page](./screenshot/history_page.PNG)
+![Chat Page](./screenshot/chat.PNG)
+![Detail Chat Page](./screenshot/detail_chat.PNG)

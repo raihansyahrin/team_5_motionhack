@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_svg/svg.dart';
 import 'package:team_5_motionhack/common/styles/colors.dart';
 import 'package:team_5_motionhack/common/theme/font.dart';
@@ -23,9 +24,12 @@ class ProfilePage extends StatelessWidget {
           const SizedBox(
             height: 28,
           ),
-          const CircleAvatar(
-            backgroundColor: Colors.green,
-            minRadius: 50,
+          ClipRRect(
+            borderRadius: BorderRadius.circular(50),
+            child: Image.asset(
+              'assets/images/image.png',
+              height: 100,
+            ),
           ),
           const SizedBox(
             height: 25,
