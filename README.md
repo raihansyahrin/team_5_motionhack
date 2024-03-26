@@ -37,7 +37,7 @@ Password : dummy password
 ![Register](./screenshot/register.PNG)
 ![Home Page](./screenshot/home_page.PNG)
 ![Investment Page](./screenshot/investment_page.PNG)
-![Consultant Page](./screenshot/consultant_page.PNG)
+![Consultant Page](./screenshot/consultation_page.PNG)
 ![History Page](./screenshot/history_page.PNG)
 ![Chat Page](./screenshot/chat.PNG)
 ![Detail Chat Page](./screenshot/detail_chat.PNG)
