@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:team_5_motionhack/common/theme/font.dart';
 import 'package:team_5_motionhack/ui/chat/chat_page.dart';
-import 'package:team_5_motionhack/ui/widgets/bottom_nav_bar.dart';
 
 class ChatConsultationPage extends StatelessWidget {
   const ChatConsultationPage({
@@ -28,13 +27,13 @@ class ChatConsultationPage extends StatelessWidget {
           icon: const Icon(
             Icons.arrow_back_ios_new_rounded,
             color: Colors.black,
-            size: 16,
+            size: 20,
           ),
         ),
         centerTitle: true,
         title: Text(
           'Chat Konsultan',
-          style: mediumText16.copyWith(
+          style: mediumText18.copyWith(
             color: Colors.black,
           ),
         ),

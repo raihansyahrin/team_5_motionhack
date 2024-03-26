@@ -1,6 +1,6 @@
 # GrowFundU
 
-GrowFundU merupakan sebuah platfrom yang membantu pelaku UMKM untuk mengembangkan bisnisnya dengan berhuban langsung dengan konsultan profesionnal. Dengan berbagai fitur yang moder dan minimalis, GrowFundU memberikan pengalaman pengguna yang tidak biasa.
+GrowFundU adalah sebuah platform yang menawarkan layanan konsultasi profesional bagi UMKM dan memfasilitasi dalam pencarian investor. Aplikasi ini bertujuan untuk memudahkan proses mendapatkan solusi untuk berbagai tahapan yang dihadapi, termasuk kesulitan dalam menemukan investor dan mengatasi permasalahan internal dalam usaha.
 
 ## Installation
 

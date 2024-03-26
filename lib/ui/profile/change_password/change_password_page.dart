@@ -2,12 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:team_5_motionhack/common/styles/colors.dart';
 import 'package:team_5_motionhack/common/theme/font.dart';
-import 'package:team_5_motionhack/data/local/preferences_utils.dart';
-import 'package:team_5_motionhack/ui/login/login_page.dart';
 import 'package:team_5_motionhack/ui/widgets/custom_app_bar.dart';
 import 'package:team_5_motionhack/ui/widgets/custom_elevated_button.dart';
 import 'package:team_5_motionhack/ui/widgets/custom_text_field.dart';
-import 'package:team_5_motionhack/utils/validation_helpers.dart';
 
 // final _formKey = GlobalKey<FormState>();
 
@@ -28,7 +25,6 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
   bool isEmailEmpty = true;
   bool isKonfirmasiEmpty = true;
   bool isPassEmpty = true;
-  final bool _isDaftarClicked = false;
 
   @override
   Widget build(BuildContext context) {
