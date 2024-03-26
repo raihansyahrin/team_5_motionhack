@@ -31,7 +31,7 @@ Password : dummy password
 
 ## Screenshots
 
-![Splash Screen](./screenshot/splash_screen.jpeg)
+![Splash Screen](./screenshot/splash_screen.PNG)
 ![Splash Screen2](./screenshot/splash_screen2.jpeg)
 ![Welcome Before Login](./screenshot/welcome_before_login.jpeg)
 
