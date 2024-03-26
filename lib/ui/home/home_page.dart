@@ -1,12 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:team_5_motionhack/common/styles/colors.dart';
 import 'package:team_5_motionhack/common/theme/font.dart';
 import 'package:team_5_motionhack/ui/chat/chat_page.dart';
-import 'package:team_5_motionhack/ui/home/chat.dart';
-import 'package:team_5_motionhack/ui/home/notifikasi.dart';
 import 'package:team_5_motionhack/ui/notification/notification_page.dart';
 import 'package:team_5_motionhack/ui/profile/profile_page.dart';
 import 'package:team_5_motionhack/ui/widgets/list_article_education.dart';
@@ -143,12 +139,12 @@ class _HomePageState extends State<HomePage> {
                               ),
                             );
                           } else {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const Chat(),
-                              ),
-                            );
+                            // Navigator.push(
+                            //   context,
+                            //   MaterialPageRoute(
+                            //     builder: (context) => const Chat(),
+                            //   ),
+                            // );
                           }
                         },
                         child: Row(
@@ -287,6 +283,7 @@ class _HomePageState extends State<HomePage> {
                     child: SvgPicture.asset(
                       'assets/icons/notification_icon.svg',
                       height: 30,
+                      // ignore: deprecated_member_use
                       color: AppColors.neutralColors[0],
                     ),
                   ),
@@ -328,6 +325,7 @@ class _HomePageState extends State<HomePage> {
               icon: SvgPicture.asset(
                 'assets/icons/user_icon.svg',
                 height: 30,
+                // ignore: deprecated_member_use
                 color: AppColors.neutralColors[0],
               ),
             ),
