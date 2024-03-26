@@ -161,72 +161,35 @@ class _ConfirmationPageState extends State<ConfirmationPage> {
       ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.only(
-          left: 21.0,
+          left: 21,
           right: 21,
           bottom: 50,
         ),
-        child: SizedBox(
-          height: 116,
-          child: Column(
-            children: [
-              InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const DetailPaymentPage(),
-                    ),
-                  );
-                },
-                child: Container(
-                  width: double.infinity,
-                  height: 48,
-                  decoration: BoxDecoration(
-                      color: const Color(0xFF00584B),
-                      borderRadius: BorderRadius.circular(8.0)),
-                  child: const Center(
-                    child: Text(
-                      'Selanjutnya',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Color(0xFFF8F8FF),
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
+        child: InkWell(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const DetailPaymentPage(),
+              ),
+            );
+          },
+          child: Container(
+            width: double.infinity,
+            height: 48,
+            decoration: BoxDecoration(
+                color: const Color(0xFF00584B),
+                borderRadius: BorderRadius.circular(8.0)),
+            child: const Center(
+              child: Text(
+                'Selanjutnya',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Color(0xFFF8F8FF),
+                  fontWeight: FontWeight.w500,
                 ),
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              InkWell(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: Container(
-                  width: double.infinity,
-                  height: 48,
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFF8F8FF),
-                    borderRadius: BorderRadius.circular(8.0),
-                    border: Border.all(
-                      color: const Color(0xFF00584B),
-                      width: 1,
-                    ),
-                  ),
-                  child: const Center(
-                    child: Text(
-                      'Batalkan',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Color(0xFF00584B),
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
+            ),
           ),
         ),
       ),
