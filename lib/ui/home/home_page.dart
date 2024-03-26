@@ -128,7 +128,7 @@ class _HomePageState extends State<HomePage> {
                   height: 44,
                   child: ListView.separated(
                     separatorBuilder: (context, index) =>
-                        SizedBox(width: MediaQuery.of(context).size.width / 4),
+                        SizedBox(width: MediaQuery.of(context).size.width / 5),
                     itemCount: categoryIcon.length,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
