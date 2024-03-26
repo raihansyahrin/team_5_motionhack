@@ -205,6 +205,7 @@ class _HomePageState extends State<HomePage> {
                   height: 150,
                   width: double.infinity,
                   child: ListView.separated(
+                    clipBehavior: Clip.none,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
                       return const VideoEducationCard(
