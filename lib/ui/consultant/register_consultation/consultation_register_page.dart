@@ -42,6 +42,7 @@ class _RegisterConsultationPageState extends State<RegisterConsultationPage> {
               TextFormField(
                 controller: _tanggal,
                 decoration: InputDecoration(
+                  
                   border: OutlineInputBorder(
                     borderSide: const BorderSide(color: Color(0xFFABABAB)),
                     borderRadius: BorderRadius.circular(8.0),

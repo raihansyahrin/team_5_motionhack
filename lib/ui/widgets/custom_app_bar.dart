@@ -24,13 +24,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         icon: const Icon(
           Icons.arrow_back_ios_new_rounded,
           color: Colors.black,
-          size: 16,
+          size: 20,
         ),
       ),
       centerTitle: true,
       title: Text(
         title!,
-        style: mediumText16.copyWith(
+        style: mediumText18.copyWith(
           color: Colors.black,
         ),
       ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:team_5_motionhack/common/styles/colors.dart';
 import 'package:team_5_motionhack/common/theme/font.dart';
+import 'package:team_5_motionhack/ui/login/login_page.dart';
 import 'package:team_5_motionhack/ui/widgets/bottom_nav_bar.dart';
 import 'package:team_5_motionhack/ui/widgets/custom_elevated_button.dart';
 import 'package:team_5_motionhack/ui/widgets/custom_text_field.dart';
@@ -28,6 +29,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
   bool _isDaftarClicked = false;
 
   @override
+  // ignore: override_on_non_overriding_member
   void _updateEmailEmptyStatus() {
     setState(() {
       isEmailEmpty = _emailForm.text.isEmpty;
@@ -216,10 +218,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                 GestureDetector(
                                   onTap: () {
                                     Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const BottomNavBar()));
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => const LoginPage(),
+                                      ),
+                                    );
                                   },
                                   child: Text(
                                     'Masuk',
