@@ -4,7 +4,12 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:team_5_motionhack/common/styles/colors.dart';
 import 'package:team_5_motionhack/common/theme/font.dart';
+import 'package:team_5_motionhack/ui/chat/chat_page.dart';
+import 'package:team_5_motionhack/ui/home/chat.dart';
+import 'package:team_5_motionhack/ui/home/notifikasi.dart';
+import 'package:team_5_motionhack/ui/notification/notification_page.dart';
 import 'package:team_5_motionhack/ui/profile/profile_page.dart';
+import 'package:team_5_motionhack/ui/widgets/list_consultant_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -14,19 +19,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // final List<dynamic> kategoryImage = [
-  //   'assets/icons/Promosi.png',
-  //   'assets/icons/Sales.png',
-  //   'assets/icons/Operasional.png',
-  //   'assets/icons/Kreatif.png',
-  // ];
+  final List<dynamic> categoryIcon = [
+    'assets/icons/report_icon.svg',
+    'assets/icons/chat_icon.svg',
+  ];
 
-  final List<dynamic> kategoryName = [
-    'Promosi',
-    'Penjualan',
-    'Operasional',
-    'Kreatif',
-    'Akomodasi',
+  final List<dynamic> categoryName = [
+    'Laporan\nMingguan',
+    'Chat',
   ];
 
   @override
@@ -35,82 +35,194 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: SingleChildScrollView(
           physics: const ClampingScrollPhysics(),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(
-                height: 10,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 21.0),
-                child: _buildHeader(context),
-              ),
-              const Divider(
-                thickness: 0,
-              ),
-              // Container(
-              //   margin: const EdgeInsets.only(
-              //       top: 10), // Atur margin sesuai kebutuhan
-              //   child: Column(
-              //     crossAxisAlignment: CrossAxisAlignment.start,
-              //     children: [
-              //       // Text(
-              //       //   'Kategori',
-              //       //   style: semiBoldText18.copyWith(
-              //       //       color: AppColors.primaryColors[0]),
-              //       // ),
-              //       // const SizedBox(height: 4),
-              //       SizedBox(
-              //         height:
-              //             120, // Sesuaikan ketinggian ListView sesuai kebutuhan
-              //         child: Center(
-              //           child: ListView.separated(
-              //             shrinkWrap: true,
-              //             scrollDirection: Axis.horizontal,
-              //             physics: const NeverScrollableScrollPhysics(),
-              //             itemCount: kategoryImage.length,
-              //             separatorBuilder: (context, index) =>
-              //                 const SizedBox(
-              //               width: 5,
-              //             ),
-              //             itemBuilder: (BuildContext context, int index) {
-              //               return InkWell(
-              //                 borderRadius: BorderRadius.circular(8.0),
-              //                 onTap: () {
-              //                   // Logika untuk menangani ketika item diklik
-              //                   // Anda dapat menggunakan `index` untuk mengetahui item mana yang diklik
-              //                 },
-              //                 child: Padding(
-              //                   padding: const EdgeInsets.all(8.0),
-              //                   child: Column(
-              //                     children: [
-              //                       Image(
-              //                         image: AssetImage(kategoryImage[index]),
-              //                         height: 53,
-              //                         width: 65,
-              //                       ),
-              //                       const SizedBox(
-              //                         height: 10,
-              //                       ),
-              //                       Text(
-              //                         kategoryName[index],
-              //                         style: semiBoldText12,
-              //                       ),
-              //                     ],
-              //                   ),
-              //                 ),
-              //               );
-              //             },
-              //           ),
-              //         ),
-              //       ),
-              //     ],
-              //   ),
-              // ),
-              const SizedBox(
-                height: 10,
-              ),
-            ],
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 21.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(
+                  height: 10,
+                ),
+                _buildHeader(context),
+                const Divider(
+                  thickness: 0,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  height: 120,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+
+                SizedBox(
+                  height: 44,
+                  child: ListView.separated(
+                    separatorBuilder: (context, index) =>
+                        SizedBox(width: MediaQuery.of(context).size.width / 4),
+                    itemCount: categoryIcon.length,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) {
+                      return GestureDetector(
+                        onTap: () {
+                          // Handle item tap here
+                          if (index == 1) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const ChatPage(),
+                              ),
+                            );
+                          } else {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Chat(),
+                              ),
+                            );
+                          }
+                        },
+                        child: Row(
+                          children: [
+                            SvgPicture.asset(
+                              categoryIcon[index],
+                              height: 44,
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              categoryName[index],
+                              style: regularText12,
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                const SizedBox(
+                  height: 32,
+                ),
+                Text(
+                  'Rekomendasi Konsultan',
+                  style: regularText16,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                SizedBox(
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    padding: EdgeInsetsDirectional.zero,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: 2,
+                    itemBuilder: (context, index) {
+                      return const ListConsultantWidget(
+                        nama: 'Carla',
+                        posisi: 'PT Sampoerna',
+                        pic: 'assets/PPic.png',
+                      );
+                    },
+                  ),
+                ),
+                const SizedBox(
+                  height: 32,
+                ),
+                Text(
+                  'Edukasi',
+                  style: regularText16,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 21.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Video',
+                      ),
+                      Container(
+                        height: 84,
+                        width: 141,
+                        color: Colors.blueAccent,
+                      )
+                    ],
+                  ),
+                ),
+                // Container(
+                //   margin: const EdgeInsets.only(
+                //       top: 10), // Atur margin sesuai kebutuhan
+                //   child: Column(
+                //     crossAxisAlignment: CrossAxisAlignment.start,
+                //     children: [
+                //       // Text(
+                //       //   'Kategori',
+                //       //   style: semiBoldText18.copyWith(
+                //       //       color: AppColors.primaryColors[0]),
+                //       // ),
+                //       // const SizedBox(height: 4),
+                //       SizedBox(
+                //         height:
+                //             120, // Sesuaikan ketinggian ListView sesuai kebutuhan
+                //         child: Center(
+                //           child: ListView.separated(
+                //             shrinkWrap: true,
+                //             scrollDirection: Axis.horizontal,
+                //             physics: const NeverScrollableScrollPhysics(),
+                //             itemCount: kategoryImage.length,
+                //             separatorBuilder: (context, index) =>
+                //                 const SizedBox(
+                //               width: 5,
+                //             ),
+                //             itemBuilder: (BuildContext context, int index) {
+                //               return InkWell(
+                //                 borderRadius: BorderRadius.circular(8.0),
+                //                 onTap: () {
+                //                   // Logika untuk menangani ketika item diklik
+                //                   // Anda dapat menggunakan `index` untuk mengetahui item mana yang diklik
+                //                 },
+                //                 child: Padding(
+                //                   padding: const EdgeInsets.all(8.0),
+                //                   child: Column(
+                //                     children: [
+                //                       Image(
+                //                         image: AssetImage(kategoryImage[index]),
+                //                         height: 53,
+                //                         width: 65,
+                //                       ),
+                //                       const SizedBox(
+                //                         height: 10,
+                //                       ),
+                //                       Text(
+                //                         kategoryName[index],
+                //                         style: semiBoldText12,
+                //                       ),
+                //                     ],
+                //                   ),
+                //                 ),
+                //               );
+                //             },
+                //           ),
+                //         ),
+                //       ),
+                //     ],
+                //   ),
+                // ),
+                const SizedBox(
+                  height: 10,
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -128,7 +240,14 @@ class _HomePageState extends State<HomePage> {
         Row(
           children: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const NotificationPage(),
+                  ),
+                );
+              },
               icon: Stack(
                 children: [
                   SizedBox(
