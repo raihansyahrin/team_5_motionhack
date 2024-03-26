@@ -29,10 +29,11 @@ class _BannerHistoryState extends State<BannerHistory> {
       width: double.infinity,
       decoration: const BoxDecoration(
           border: Border(
-              bottom: BorderSide(
-            width: 0.4,
-            color: Color(0xFFC9C9C9),
-          )),
+            bottom: BorderSide(
+              width: 0.4,
+              color: Color(0xFFC9C9C9),
+            ),
+          ),
           color: Color(0x00f8f8ff)),
       child: Padding(
         padding: const EdgeInsets.symmetric(
@@ -47,42 +48,43 @@ class _BannerHistoryState extends State<BannerHistory> {
               child: SvgPicture.asset(widget.pic),
             ),
             Expanded(
-                child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 13,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const SizedBox(
-                        height: 5,
-                      ),
-                      Text(
-                        widget.nama,
-                        style: const TextStyle(
-                          fontSize: 14,
-                          fontFamily: 'Outfit',
-                          fontWeight: FontWeight.w400,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 13,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SizedBox(
+                          height: 5,
                         ),
-                      ),
-                      const SizedBox(
-                        height: 5,
-                      ),
-                      Text(
-                        widget.posisi,
-                        style: lightText12.copyWith(
-                          color: const Color(0xFF7F7F7F),
+                        Text(
+                          widget.nama,
+                          style: const TextStyle(
+                            fontSize: 14,
+                            fontFamily: 'Outfit',
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            )),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          widget.posisi,
+                          style: lightText12.copyWith(
+                            color: const Color(0xFF7F7F7F),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
             widget.pengajuan
                 ? widget.terima
                     ? Container(
@@ -119,7 +121,8 @@ class _BannerHistoryState extends State<BannerHistory> {
                               color: Color(0xFFED639E),
                             ),
                           ),
-                        ))
+                        ),
+                      )
                 : Container()
           ],
         ),
