@@ -28,7 +28,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   final List<Widget> _pages = [
     const HomePage(),
-    const InvestmentPage(),
+    const InvestmentPage(
+      isSubmitProposal: false,
+    ),
     const ConsultantPage(),
     const HistoryPage(),
   ];
