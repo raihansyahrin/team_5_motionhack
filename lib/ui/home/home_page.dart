@@ -1,11 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:team_5_motionhack/common/styles/colors.dart';
 import 'package:team_5_motionhack/common/theme/font.dart';
 import 'package:team_5_motionhack/ui/chat/chat_page.dart';
-
+import 'package:team_5_motionhack/ui/laporan/laporan_mingguan.dart';
 import 'package:team_5_motionhack/ui/notification/notification_page.dart';
 import 'package:team_5_motionhack/ui/profile/profile_page.dart';
 import 'package:team_5_motionhack/ui/widgets/list_article_education.dart';
@@ -35,7 +33,6 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          physics: const ClampingScrollPhysics(),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 21.0),
             child: Column(
@@ -52,22 +49,83 @@ class _HomePageState extends State<HomePage> {
                   height: 20,
                 ),
                 Container(
-                  height: 120,
+                  height: 100,
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    color: Colors.green,
+                    // color: const Color.fromARGB(255, 212, 236, 212),
                     borderRadius: BorderRadius.circular(8),
+                    border: Border.all(
+                      width: 0.5,
+                      color: Colors.grey,
+                    ),
+                  ),
+                  padding: const EdgeInsets.all(21),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          SvgPicture.asset(
+                            'assets/icons/calendar_icon.svg',
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Jadwal Konsultasi',
+                                style: regularText12,
+                              ),
+                              Text(
+                                '12.00, 5 Aprill 2024',
+                                style: lightText12,
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SvgPicture.asset(
+                            'assets/icons/folder_icon.svg',
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Deadline Laporan',
+                                style: regularText12,
+                              ),
+                              Text(
+                                'Belum Ada',
+                                style: lightText12,
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ],
                   ),
                 ),
                 const SizedBox(
                   height: 20,
                 ),
-
                 SizedBox(
                   height: 44,
                   child: ListView.separated(
                     separatorBuilder: (context, index) =>
-                        SizedBox(width: MediaQuery.of(context).size.width / 4),
+                        SizedBox(width: MediaQuery.of(context).size.width / 5),
                     itemCount: categoryIcon.length,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
@@ -82,12 +140,12 @@ class _HomePageState extends State<HomePage> {
                               ),
                             );
                           } else {
-                            // Navigator.push(
-                            //   context,
-                            //   MaterialPageRoute(
-                            //     builder: (context) => const Lapor(),
-                            //   ),
-                            // );
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const LaporanMingguan(),
+                              ),
+                            );
                           }
                         },
                         child: Row(
@@ -138,7 +196,7 @@ class _HomePageState extends State<HomePage> {
                   height: 32,
                 ),
                 Text(
-                  'Edukasi',
+                  'Video Edukasi',
                   style: regularText16,
                 ),
                 const SizedBox(
@@ -190,65 +248,6 @@ class _HomePageState extends State<HomePage> {
                     },
                   ),
                 ),
-                // Container(
-                //   margin: const EdgeInsets.only(
-                //       top: 10), // Atur margin sesuai kebutuhan
-                //   child: Column(
-                //     crossAxisAlignment: CrossAxisAlignment.start,
-                //     children: [
-                //       // Text(
-                //       //   'Kategori',
-                //       //   style: semiBoldText18.copyWith(
-                //       //       color: AppColors.primaryColors[0]),
-                //       // ),
-                //       // const SizedBox(height: 4),
-                //       SizedBox(
-                //         height:
-                //             120, // Sesuaikan ketinggian ListView sesuai kebutuhan
-                //         child: Center(
-                //           child: ListView.separated(
-                //             shrinkWrap: true,
-                //             scrollDirection: Axis.horizontal,
-                //             physics: const NeverScrollableScrollPhysics(),
-                //             itemCount: kategoryImage.length,
-                //             separatorBuilder: (context, index) =>
-                //                 const SizedBox(
-                //               width: 5,
-                //             ),
-                //             itemBuilder: (BuildContext context, int index) {
-                //               return InkWell(
-                //                 borderRadius: BorderRadius.circular(8.0),
-                //                 onTap: () {
-                //                   // Logika untuk menangani ketika item diklik
-                //                   // Anda dapat menggunakan `index` untuk mengetahui item mana yang diklik
-                //                 },
-                //                 child: Padding(
-                //                   padding: const EdgeInsets.all(8.0),
-                //                   child: Column(
-                //                     children: [
-                //                       Image(
-                //                         image: AssetImage(kategoryImage[index]),
-                //                         height: 53,
-                //                         width: 65,
-                //                       ),
-                //                       const SizedBox(
-                //                         height: 10,
-                //                       ),
-                //                       Text(
-                //                         kategoryName[index],
-                //                         style: semiBoldText12,
-                //                       ),
-                //                     ],
-                //                   ),
-                //                 ),
-                //               );
-                //             },
-                //           ),
-                //         ),
-                //       ),
-                //     ],
-                //   ),
-                // ),
                 const SizedBox(
                   height: 10,
                 ),
@@ -286,6 +285,7 @@ class _HomePageState extends State<HomePage> {
                     child: SvgPicture.asset(
                       'assets/icons/notification_icon.svg',
                       height: 30,
+                      // ignore: deprecated_member_use
                       color: AppColors.neutralColors[0],
                     ),
                   ),
@@ -327,6 +327,7 @@ class _HomePageState extends State<HomePage> {
               icon: SvgPicture.asset(
                 'assets/icons/user_icon.svg',
                 height: 30,
+                // ignore: deprecated_member_use
                 color: AppColors.neutralColors[0],
               ),
             ),
