@@ -20,7 +20,7 @@ class ChangePasswordPage extends StatefulWidget {
 }
 
 class _ChangePasswordPageState extends State<ChangePasswordPage> {
-  final TextEditingController _emailForm = TextEditingController();
+  final TextEditingController _oldPassword = TextEditingController();
   final TextEditingController _passForm = TextEditingController();
   final TextEditingController _konfirmasiForm = TextEditingController();
   bool isPassHide = true;
@@ -56,7 +56,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                 CustomTextField(
                   label: 'Kata sandi lama',
                   labelStyle: regularText16,
-                  controller: _emailForm,
+                  controller: _oldPassword,
                   isRequired: false,
                   isPassword: true,
                   // validator: (formEmail) {
@@ -67,6 +67,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                   //   return ValidationHelpers.validateEmail(formEmail ?? '');
                   // },
                   isPasswordEmpty: isPassEmpty,
+                  isPasswordHide: isPassHide,
                 ),
                 const SizedBox(
                   height: 28,
