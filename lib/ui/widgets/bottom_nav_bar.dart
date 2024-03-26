@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:team_5_motionhack/common/styles/colors.dart';
+
 import 'package:team_5_motionhack/ui/consultant/consultant_page.dart';
 import 'package:team_5_motionhack/ui/history/history_page.dart';
 import 'package:team_5_motionhack/ui/home/home_page.dart';
 import 'package:team_5_motionhack/ui/investment/investment_page.dart';
-import 'package:team_5_motionhack/ui/profile/profile_page.dart';
 
 class BottomNavBar extends StatefulWidget {
   final int initialPage;
@@ -54,7 +52,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
         ),
         selectedLabelStyle: const TextStyle(height: 2.5, fontSize: 12),
         unselectedLabelStyle: const TextStyle(fontSize: 12, height: 2.5),
-        backgroundColor: const Color.fromARGB(255, 116, 247, 143),
+        backgroundColor: Colors.transparent,
+
+        // backgroundColor: const Color.fromARGB(255, 116, 247, 143),
 
         onTap: (index) {
           setState(() {
