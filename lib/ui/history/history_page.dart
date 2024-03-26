@@ -7,9 +7,16 @@ class HistoryPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: DefaultTabController(
+      return Scaffold(
+        // appBar: const CustomAppBar(
+        //   title: 'Chat',
+        // ),
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          surfaceTintColor: Colors.transparent,
+          elevation: 0,
+        ),
+        body: DefaultTabController(
           initialIndex: 0,
           length: 2,
           child: Column(
@@ -38,40 +45,37 @@ class HistoryPage extends StatelessWidget {
                         physics: const NeverScrollableScrollPhysics(),
                         itemCount: 1,
                         itemBuilder: (context, index) {
-                          return const Padding(
-                            padding: EdgeInsets.all(21.0),
-                            child: Column(
-                              children: [
-                                BannerHistory(
-                                  nama: 'Pengajuan Proposal',
-                                  pic: 'assets/icons/konsultasi_icon.svg',
-                                  posisi: '5 April 2024, 12.00',
-                                  pengajuan: true,
-                                  terima: true,
-                                ),
-                                BannerHistory(
-                                  nama: 'Pengajuan Proposal',
-                                  pic: 'assets/icons/konsultasi_icon.svg',
-                                  posisi: '5 April 2024, 12.00',
-                                  pengajuan: true,
-                                  terima: false,
-                                ),
-                                BannerHistory(
-                                  nama: 'Laporan Mingguan',
-                                  pic: 'assets/icons/konsultasi_icon.svg',
-                                  posisi: '5 April 2024, 12.00',
-                                  pengajuan: false,
-                                  terima: true,
-                                ),
-                                BannerHistory(
-                                  nama: 'Pengajuan Proposal',
-                                  pic: 'assets/icons/konsultasi_icon.svg',
-                                  posisi: '5 April 2024, 12.00',
-                                  pengajuan: false,
-                                  terima: false,
-                                ),
-                              ],
-                            ),
+                          return const Column(
+                            children: [
+                              BannerHistory(
+                                nama: 'Pengajuan Proposal',
+                                pic: 'assets/icons/konsultasi_icon.svg',
+                                posisi: '5 April 2024, 12.00',
+                                pengajuan: true,
+                                terima: true,
+                              ),
+                              BannerHistory(
+                                nama: 'Pengajuan Proposal',
+                                pic: 'assets/icons/konsultasi_icon.svg',
+                                posisi: '5 April 2024, 12.00',
+                                pengajuan: true,
+                                terima: false,
+                              ),
+                              BannerHistory(
+                                nama: 'Laporan Mingguan',
+                                pic: 'assets/icons/konsultasi_icon.svg',
+                                posisi: '5 April 2024, 12.00',
+                                pengajuan: false,
+                                terima: true,
+                              ),
+                              BannerHistory(
+                                nama: 'Pengajuan Proposal',
+                                pic: 'assets/icons/konsultasi_icon.svg',
+                                posisi: '5 April 2024, 12.00',
+                                pengajuan: false,
+                                terima: false,
+                              ),
+                            ],
                           );
                         },
                       ),
@@ -83,26 +87,23 @@ class HistoryPage extends StatelessWidget {
                         physics: const NeverScrollableScrollPhysics(),
                         itemCount: 1,
                         itemBuilder: (context, index) {
-                          return const Padding(
-                            padding: EdgeInsets.all(21.0),
-                            child: Column(
-                              children: [
-                                BannerHistory(
-                                  nama: 'Konsultasi',
-                                  pic: 'assets/icons/konsultasi_icon.svg',
-                                  posisi: '5 April 2024, 12.00',
-                                  pengajuan: false,
-                                  terima: false,
-                                ),
-                                BannerHistory(
-                                  nama: 'Konsultasi',
-                                  pic: 'assets/icons/konsultasi_icon.svg',
-                                  posisi: '5 April 2024, 12.00',
-                                  pengajuan: false,
-                                  terima: false,
-                                )
-                              ],
+                          return const Column(
+                            children: [
+                              BannerHistory(
+                                nama: 'Konsultasi',
+                                pic: 'assets/icons/konsultasi_icon.svg',
+                                posisi: '5 April 2024, 12.00',
+                                pengajuan: false,
+                                terima: false,
                             ),
+                              BannerHistory(
+                                nama: 'Konsultasi',
+                                pic: 'assets/icons/konsultasi_icon.svg',
+                                posisi: '5 April 2024, 12.00',
+                                pengajuan: false,
+                                terima: false,
+                              )
+                            ],
                           );
                         },
                       ),
@@ -113,7 +114,6 @@ class HistoryPage extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
+      );
   }
 }

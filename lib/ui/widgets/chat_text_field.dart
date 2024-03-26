@@ -16,25 +16,21 @@ class _ChatTextFieldState extends State<ChatTextField> {
       controller: _chat,
       decoration: InputDecoration(
           border: OutlineInputBorder(
-            borderSide: const BorderSide(color: Color(0xFFC9C9C9)),
+            borderSide: BorderSide(color: Color(0xFFC9C9C9)),
             borderRadius: BorderRadius.circular(8.0),
           ),
           hintText: 'Halo, saya mau berkonsultasi',
-          hintStyle: const TextStyle(
+          hintStyle: TextStyle(
             fontSize: 12,
             fontWeight: FontWeight.w300,
             color: Color(0xFF7F7F7F),
           ),
           suffixIcon: Transform.scale(
             scale: 0.6,
-            child: SvgPicture.asset(
-              'assets/icons/send_icon.svg',
-              width: 24,
-              height: 24,
-            ),
+            child: SvgPicture.asset('assets/icons/send_icon.svg', width: 24, height: 24,),
           ),
-          contentPadding:
-              const EdgeInsets.symmetric(vertical: 12.0, horizontal: 25.0)),
+          contentPadding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 25.0)
+      ),
     );
   }
 }

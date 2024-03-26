@@ -64,7 +64,7 @@ class _ProfileInvestorPageState extends State<ProfileInvestorPage> {
                                     Text(
                                       'Franco',
                                       style: lightText14.copyWith(
-                                        color: const Color(0xFF7F7F7F),
+                                        color: Colors.grey,
                                       ),
                                     ),
                                   ],
@@ -85,7 +85,7 @@ class _ProfileInvestorPageState extends State<ProfileInvestorPage> {
                                       // maxLines: 5,
                                       overflow: TextOverflow.clip,
                                       style: lightText14.copyWith(
-                                        color: const Color(0xFF7F7F7F),
+                                        color: Colors.grey,
                                       ),
                                     ),
                                   ],
@@ -108,7 +108,7 @@ class _ProfileInvestorPageState extends State<ProfileInvestorPage> {
                                   Text(
                                     'Konsultan Keuangan',
                                     style: lightText14.copyWith(
-                                      color: const Color(0xFF7F7F7F),
+                                      color: Colors.grey,
                                     ),
                                   ),
                                 ],
@@ -145,11 +145,13 @@ class _ProfileInvestorPageState extends State<ProfileInvestorPage> {
                                   const SizedBox(
                                     width: 14,
                                   ),
-                                  Text(
+                                  const Text(
                                     'CV- Franco.pdf',
-                                    style: lightText14.copyWith(
-                                      color: const Color(0xFF00584B),
-                                    ),
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w400,
+                                        fontFamily: 'Outfit',
+                                        color: Color(0xFF00584B)),
                                   ),
                                 ],
                               ),
@@ -158,9 +160,13 @@ class _ProfileInvestorPageState extends State<ProfileInvestorPage> {
                           const SizedBox(
                             height: 30,
                           ),
-                          Text(
+                          const Text(
                             'Lampiran Portofolio',
-                            style: regularText14,
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                              fontFamily: 'Outfit',
+                            ),
                           ),
                           const SizedBox(
                             height: 16,
@@ -181,11 +187,13 @@ class _ProfileInvestorPageState extends State<ProfileInvestorPage> {
                                   const SizedBox(
                                     width: 14,
                                   ),
-                                  Text(
+                                  const Text(
                                     'Portfolio- Franco.pdf',
-                                    style: lightText14.copyWith(
-                                      color: const Color(0xFF00584B),
-                                    ),
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w400,
+                                        fontFamily: 'Outfit',
+                                        color: Color(0xFF00584B)),
                                   ),
                                 ],
                               ),

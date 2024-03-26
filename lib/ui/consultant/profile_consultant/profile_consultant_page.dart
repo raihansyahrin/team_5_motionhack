@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:team_5_motionhack/common/theme/font.dart';
 import 'package:team_5_motionhack/ui/consultant/register_consultation/consultation_register_page.dart';
@@ -63,7 +64,7 @@ class _ProfileConsultantPageState extends State<ProfileConsultantPage> {
                                     Text(
                                       'Franco',
                                       style: lightText14.copyWith(
-                                        color: const Color(0xFF7F7F7F),
+                                        color: Colors.grey,
                                       ),
                                     ),
                                   ],
@@ -84,7 +85,7 @@ class _ProfileConsultantPageState extends State<ProfileConsultantPage> {
                                       // maxLines: 5,
                                       overflow: TextOverflow.clip,
                                       style: lightText14.copyWith(
-                                        color: const Color(0xFF7F7F7F),
+                                        color: Colors.grey,
                                       ),
                                     ),
                                   ],
@@ -107,7 +108,7 @@ class _ProfileConsultantPageState extends State<ProfileConsultantPage> {
                                   Text(
                                     'Konsultan Keuangan',
                                     style: lightText14.copyWith(
-                                      color: const Color(0xFF7F7F7F),
+                                      color: Colors.grey,
                                     ),
                                   ),
                                 ],
@@ -144,11 +145,13 @@ class _ProfileConsultantPageState extends State<ProfileConsultantPage> {
                                   const SizedBox(
                                     width: 14,
                                   ),
-                                  Text(
+                                  const Text(
                                     'CV- Franco.pdf',
-                                    style: lightText14.copyWith(
-                                      color: const Color(0xFF00584B),
-                                    ),
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w400,
+                                        fontFamily: 'Outfit',
+                                        color: Color(0xFF00584B)),
                                   ),
                                 ],
                               ),
@@ -184,11 +187,13 @@ class _ProfileConsultantPageState extends State<ProfileConsultantPage> {
                                   const SizedBox(
                                     width: 14,
                                   ),
-                                  Text(
+                                  const Text(
                                     'Portfolio- Franco.pdf',
-                                    style: lightText14.copyWith(
-                                      color: const Color(0xFF00584B),
-                                    ),
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w400,
+                                        fontFamily: 'Outfit',
+                                        color: Color(0xFF00584B)),
                                   ),
                                 ],
                               ),

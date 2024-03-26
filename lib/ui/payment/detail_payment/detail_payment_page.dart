@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:team_5_motionhack/common/theme/font.dart';
 import 'package:team_5_motionhack/ui/chat/chat_consultation_page.dart';
+import 'package:team_5_motionhack/ui/widgets/bottom_nav_bar.dart';
 import 'package:team_5_motionhack/ui/widgets/custom_app_bar.dart';
 import 'dart:async';
 
@@ -12,6 +13,25 @@ class DetailPaymentPage extends StatefulWidget {
 }
 
 class _DetailPaymentPageState extends State<DetailPaymentPage> {
+  bool _showNotif = false;
+
+  void _showNotifikasiTemporary() {
+    setState(() {
+      _showNotif = true;
+    });
+    Timer(const Duration(seconds: 3), () {
+      setState(() {
+        _showNotif = false;
+      });
+    });
+  }
+
+  Widget _buildDialog(BuildContext context) {
+    return const AlertDialog(
+      title: Text('Title'),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:team_5_motionhack/common/theme/font.dart';
 import 'package:team_5_motionhack/ui/widgets/bottom_nav_bar.dart';
 import 'package:team_5_motionhack/ui/widgets/card_chat.dart';
+import 'package:team_5_motionhack/ui/widgets/custom_app_bar.dart';
 
 class ChatPage extends StatelessWidget {
   const ChatPage({super.key});
@@ -9,6 +10,9 @@ class ChatPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // appBar: const CustomAppBar(
+      //   title: 'Chat',
+      // ),
       appBar: AppBar(
         surfaceTintColor: Colors.transparent,
         elevation: 0,
@@ -28,13 +32,13 @@ class ChatPage extends StatelessWidget {
           icon: const Icon(
             Icons.arrow_back_ios_new_rounded,
             color: Colors.black,
-            size: 20,
+            size: 16,
           ),
         ),
         centerTitle: true,
         title: Text(
           'Chat',
-          style: mediumText18.copyWith(
+          style: mediumText16.copyWith(
             color: Colors.black,
           ),
         ),

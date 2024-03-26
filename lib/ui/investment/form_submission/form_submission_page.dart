@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:team_5_motionhack/common/theme/font.dart';
+import 'package:team_5_motionhack/ui/investment/investment_page.dart';
 import 'package:team_5_motionhack/ui/widgets/bottom_nav_bar.dart';
 import 'package:team_5_motionhack/ui/widgets/custom_app_bar.dart';
 
@@ -125,9 +127,7 @@ class FormSubmissionPage extends StatelessWidget {
                       ),
                       Text(
                         '(File: max 10 MB)',
-                        style: lightText14.copyWith(
-                          color: const Color(0xFF00584B),
-                        ),
+                        style: lightText14,
                       ),
                     ],
                   ),
