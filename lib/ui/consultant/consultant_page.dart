@@ -8,9 +8,12 @@ class ConsultantPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 125),
+          padding: const EdgeInsets.symmetric(
+            vertical: 125,
+            horizontal: 21,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -21,16 +24,21 @@ class ConsultantPage extends StatelessWidget {
               const SizedBox(
                 height: 32,
               ),
-              const SingleChildScrollView(
-                child: Column(
-                  children: [
-                    ListConsultantWidget(),
-                    ListConsultantWidget(),
-                    ListConsultantWidget(),
-                    ListConsultantWidget(),
-                  ],
+              SizedBox(
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  padding: EdgeInsetsDirectional.zero,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: 4,
+                  itemBuilder: (context, index) {
+                    return const ListConsultantWidget(
+                      nama: 'Carla',
+                      posisi: 'PT Sampoerna',
+                      pic: 'assets/PPic.png',
+                    );
+                  },
                 ),
-              )
+              ),
             ],
           ),
         ),
