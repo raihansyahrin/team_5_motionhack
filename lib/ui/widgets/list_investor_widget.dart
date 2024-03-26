@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:team_5_motionhack/common/theme/font.dart';
-import 'package:team_5_motionhack/ui/consultant/profile_consultant/profile_consultant_page.dart';
-import 'package:team_5_motionhack/ui/history/history_page.dart';
 import 'package:team_5_motionhack/ui/investment/profile_investor/profile_investor_page.dart';
 
 class ListInvestorWidget extends StatefulWidget {
