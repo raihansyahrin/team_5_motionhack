@@ -47,16 +47,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
         currentIndex: _currentIndex,
         selectedItemColor: const Color(0xFF00584B),
         unselectedItemColor: Colors.grey,
-
-        selectedIconTheme: const IconThemeData(
-          color: Colors.green,
-          fill: 0.9,
-        ),
+        showSelectedLabels: true,
+ 
         selectedLabelStyle: const TextStyle(height: 2.5, fontSize: 12),
         unselectedLabelStyle: const TextStyle(fontSize: 12, height: 2.5),
         backgroundColor: Colors.transparent,
-
-        // backgroundColor: const Color.fromARGB(255, 116, 247, 143),
 
         onTap: (index) {
           setState(() {
@@ -65,19 +60,27 @@ class _BottomNavBarState extends State<BottomNavBar> {
         },
         items: [
           BottomNavigationBarItem(
-            icon: SvgPicture.asset('assets/icons/home_navbar.svg'),
+            icon: _currentIndex == 0
+                ? SvgPicture.asset('assets/icons/home_active.svg')
+                : SvgPicture.asset('assets/icons/home_navbar.svg'),
             label: 'Beranda',
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset('assets/icons/investasi_navbar.svg'),
+            icon: _currentIndex == 1
+                ? SvgPicture.asset('assets/icons/investment_active.svg')
+                : SvgPicture.asset('assets/icons/investasi_navbar.svg'),
             label: 'Investasi',
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset('assets/icons/consultant_navbar.svg'),
+            icon: _currentIndex == 2
+                ? SvgPicture.asset('assets/icons/consult_active.svg')
+                : SvgPicture.asset('assets/icons/consultant_navbar.svg'),
             label: 'Konsultasi',
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset('assets/icons/history_navbar.svg'),
+            icon: _currentIndex == 3
+                ? SvgPicture.asset('assets/icons/history_active.svg')
+                : SvgPicture.asset('assets/icons/history_navbar.svg'),
             label: 'Riwayat',
           ),
         ],
