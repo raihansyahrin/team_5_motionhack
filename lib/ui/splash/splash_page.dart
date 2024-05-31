@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:team_5_motionhack/common/styles/colors.dart';
-import 'package:team_5_motionhack/data/local/preferences_utils.dart';
-import 'package:team_5_motionhack/ui/widgets/bottom_nav_bar.dart';
+import '../../common/styles/colors.dart';
+import '../../data/local/preferences_utils.dart';
+import '../widgets/bottom_nav_bar.dart';
 
 import '../login/login_page.dart';
 

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:team_5_motionhack/common/styles/colors.dart';
-import 'package:team_5_motionhack/common/theme/font.dart';
-import 'package:team_5_motionhack/ui/login/login_page.dart';
-import 'package:team_5_motionhack/ui/widgets/bottom_nav_bar.dart';
-import 'package:team_5_motionhack/ui/widgets/custom_elevated_button.dart';
-import 'package:team_5_motionhack/ui/widgets/custom_text_field.dart';
-import 'package:team_5_motionhack/utils/validation_helpers.dart';
+import '../../common/styles/colors.dart';
+import '../../common/theme/font.dart';
+import '../login/login_page.dart';
+import '../widgets/custom_elevated_button.dart';
+import '../widgets/custom_text_field.dart';
+import '../../utils/validation_helpers.dart';
 
 final _formKey = GlobalKey<FormState>();
 
@@ -189,7 +188,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              const BottomNavBar()),
+                                              const LoginPage()),
                                       ModalRoute.withName('/'));
                                 }
                               },

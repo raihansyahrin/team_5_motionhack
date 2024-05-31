@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:team_5_motionhack/common/theme/font.dart';
-import 'package:team_5_motionhack/ui/widgets/bottom_nav_bar.dart';
-import 'package:team_5_motionhack/ui/widgets/custom_app_bar.dart';
+import '../../common/theme/font.dart';
+import '../widgets/bottom_nav_bar.dart';
+import '../widgets/custom_app_bar.dart';
 import 'dart:async';
 
 class LaporanMingguan extends StatefulWidget {

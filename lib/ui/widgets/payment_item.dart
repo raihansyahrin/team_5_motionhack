@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:team_5_motionhack/common/theme/font.dart';
-import 'package:team_5_motionhack/ui/payment/confirmation_payment/confirmation_page.dart';
+import '../../common/theme/font.dart';
+import '../payment/confirmation_payment/confirmation_page.dart';
 
 class PaymentItem extends StatelessWidget {
   final Image pic;
