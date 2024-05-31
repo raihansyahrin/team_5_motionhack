@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/svg.dart';
-import 'package:team_5_motionhack/common/styles/colors.dart';
-import 'package:team_5_motionhack/common/theme/font.dart';
-import 'package:team_5_motionhack/ui/login/login_page.dart';
-import 'package:team_5_motionhack/ui/profile/change_password/change_password_page.dart';
-import 'package:team_5_motionhack/ui/profile/edit_profile/edit_profile.dart';
-import 'package:team_5_motionhack/ui/widgets/custom_app_bar.dart';
+import '../../common/styles/colors.dart';
+import '../../common/theme/font.dart';
+import '../login/login_page.dart';
+import 'change_password/change_password_page.dart';
+import 'edit_profile/edit_profile.dart';
+import '../widgets/custom_app_bar.dart';
 
 class ProfilePage extends StatelessWidget {
   final GlobalKey<FormState> _formKey =
@@ -113,13 +113,112 @@ class ProfilePage extends StatelessWidget {
                       ),
                     ),
                     onTap: () {
-                      Navigator.pushAndRemoveUntil(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const LoginPage(),
+                      showModalBottomSheet(
+                        context: context,
+                        backgroundColor: Colors.white,
+                        shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.vertical(
+                            top: Radius.circular(20),
+                          ),
                         ),
-                        (route) => false,
+                        builder: (context) {
+                          return SingleChildScrollView(
+                            child: Padding(
+                              padding: const EdgeInsets.all(24),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  const Text(
+                                    'Keluar',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      color: Color(0xFF00584B),
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 12,
+                                  ),
+                                  const Text(
+                                    'Apakah kamu yakin ingin keluar dari akun ini?',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color: Color(0xFF00584B),
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 12,
+                                  ),
+                                  SizedBox(
+                                    width: double.infinity,
+                                    child: ElevatedButton(
+                                      onPressed: () {
+                                        Navigator.pushAndRemoveUntil(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const LoginPage(),
+                                          ),
+                                          (route) => false,
+                                        );
+                                      },
+                                      style: ElevatedButton.styleFrom(
+                                        backgroundColor:
+                                            const Color(0xFF00584B),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                        ),
+                                      ),
+                                      child: const Text(
+                                        'Ya',
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    width: 8,
+                                  ),
+                                  SizedBox(
+                                    width: double.infinity,
+                                    child: OutlinedButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      style: OutlinedButton.styleFrom(
+                                        foregroundColor:
+                                            AppColors.primaryColors[0],
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                        ),
+                                      ),
+                                      child: Text(
+                                        'Tidak',
+                                        style: TextStyle(
+                                          color: AppColors.primaryColors[0],
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          );
+                        },
                       );
+                      // Navigator.pushAndRemoveUntil(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //     builder: (context) => const LoginPage(),
+                      //   ),
+                      //   (route) => false,
+                      // );
                     },
                   ),
                   const Divider(

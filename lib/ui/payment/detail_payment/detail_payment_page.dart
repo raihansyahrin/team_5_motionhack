@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:team_5_motionhack/common/theme/font.dart';
-import 'package:team_5_motionhack/ui/chat/chat_consultation_page.dart';
-import 'package:team_5_motionhack/ui/widgets/custom_app_bar.dart';
+import '../../../common/styles/colors.dart';
+import '../../../common/theme/font.dart';
+import '../../chat/chat_consultation_page.dart';
+import '../../widgets/custom_app_bar.dart';
 import 'dart:async';
 
 class DetailPaymentPage extends StatefulWidget {
@@ -170,7 +171,11 @@ class _DetailPaymentPageState extends State<DetailPaymentPage> {
                   Navigator.of(context).pop(true);
                   Navigator.of(context).pushAndRemoveUntil(
                     MaterialPageRoute(
-                      builder: (context) => const ChatConsultationPage(),
+                      builder: (context) => const ChatConsultationPage(
+                        isConsultant: true,
+                        name: 'Aqeel',
+                        pic: 'https://randomuser.me/api/portraits/men/15.jpg',
+                      ),
                     ),
                     (route) => false,
                   );
@@ -211,13 +216,11 @@ class _DetailPaymentPageState extends State<DetailPaymentPage> {
             decoration: BoxDecoration(
                 color: const Color(0xFF00584B),
                 borderRadius: BorderRadius.circular(8.0)),
-            child: const Center(
+            child: Center(
               child: Text(
                 'Selanjutnya',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Color(0xFFF8F8FF),
-                  fontWeight: FontWeight.w500,
+                style: regularText16.copyWith(
+                  color: kColorScheme.background,
                 ),
               ),
             ),

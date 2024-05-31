@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:team_5_motionhack/common/theme/font.dart';
-import 'package:team_5_motionhack/ui/widgets/list_investor_widget.dart';
+import '../../common/theme/font.dart';
+import '../../data/model/investor.dart';
+import '../widgets/list_investor_widget.dart';
 
 class InvestmentPage extends StatelessWidget {
   final bool? isSubmitProposal;
@@ -49,8 +50,8 @@ class InvestmentPage extends StatelessWidget {
                     children: [
                       ClipRRect(
                         borderRadius: BorderRadius.circular(50),
-                        child: Image.asset(
-                          'assets/PPic.png',
+                        child: Image.network(
+                          'https://randomuser.me/api/portraits/men/2.jpg',
                           height: 42,
                         ),
                       ),
@@ -69,10 +70,6 @@ class InvestmentPage extends StatelessWidget {
                                 const SizedBox(
                                   height: 5,
                                 ),
-                                // Text(
-                                //   'Franco',
-                                //   style: regularText14,
-                                // ),
                                 Text(
                                   'Proposal Pendanaan Bagian',
                                   overflow: TextOverflow.ellipsis,
@@ -81,7 +78,6 @@ class InvestmentPage extends StatelessWidget {
                                 const SizedBox(
                                   height: 5,
                                 ),
-
                                 Text(
                                   '23 Maret 2023',
                                   style: regularText12.copyWith(
@@ -141,10 +137,12 @@ class InvestmentPage extends StatelessWidget {
                   physics: const NeverScrollableScrollPhysics(),
                   itemCount: 9,
                   itemBuilder: (context, index) {
-                    return const ListInvestorWidget(
-                      nama: 'Carla',
-                      posisi: 'PT Sampoerna',
-                      pic: 'assets/PPic.png',
+                    final InvestorModel investorModel = investorList[index];
+                    return ListInvestorWidget(
+                      nama: investorModel.nama,
+                      posisi: investorModel.posisi,
+                      pic: investorModel.pic,
+                      isConsultant: investorModel.isConsultant,
                     );
                   },
                 ),

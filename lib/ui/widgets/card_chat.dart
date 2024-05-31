@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:team_5_motionhack/common/theme/font.dart';
-import 'package:team_5_motionhack/ui/chat/chat_consultation_page.dart';
+import '../../common/theme/font.dart';
+import '../chat/chat_consultation_page.dart';
 
 class CardChat extends StatefulWidget {
   final String nama;
   final String posisi;
   final String pic;
-  final bool? isConsultant;
+  final bool isConsultant;
   const CardChat({
     super.key,
     required this.nama,
@@ -27,7 +27,11 @@ class _CardChatState extends State<CardChat> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const ChatConsultationPage(),
+            builder: (context) => ChatConsultationPage(
+              isConsultant: widget.isConsultant,
+              name: widget.nama,
+              pic: widget.pic,
+            ),
           ),
         );
       },
@@ -56,7 +60,7 @@ class _CardChatState extends State<CardChat> {
               //   'assets/images/image.png',
               //   height: 42,
               // ),
-              child: Image.asset(
+              child: Image.network(
                 widget.pic,
                 height: 42,
               ),
