@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:team_5_motionhack/common/theme/font.dart';
-import 'package:team_5_motionhack/ui/consultant/register_consultation/consultation_register_page.dart';
-import 'package:team_5_motionhack/ui/widgets/custom_app_bar.dart';
+import '../../../common/styles/colors.dart';
+import '../../../common/theme/font.dart';
+import '../register_consultation/consultation_register_page.dart';
+import '../../widgets/custom_app_bar.dart';
 
 class ProfileConsultantPage extends StatefulWidget {
   const ProfileConsultantPage({super.key});
@@ -61,7 +62,7 @@ class _ProfileConsultantPageState extends State<ProfileConsultantPage> {
                                       style: regularText14,
                                     ),
                                     Text(
-                                      'Franco',
+                                      'Aqeel',
                                       style: lightText14.copyWith(
                                         color: const Color(0xFF7F7F7F),
                                       ),
@@ -105,7 +106,7 @@ class _ProfileConsultantPageState extends State<ProfileConsultantPage> {
                                     style: regularText14,
                                   ),
                                   Text(
-                                    'Konsultan Keuangan',
+                                    'Konsultan Legal',
                                     style: lightText14.copyWith(
                                       color: const Color(0xFF7F7F7F),
                                     ),
@@ -145,7 +146,7 @@ class _ProfileConsultantPageState extends State<ProfileConsultantPage> {
                                     width: 14,
                                   ),
                                   Text(
-                                    'CV- Franco.pdf',
+                                    'CV-Aqeel.pdf',
                                     style: lightText14.copyWith(
                                       color: const Color(0xFF00584B),
                                     ),
@@ -185,7 +186,7 @@ class _ProfileConsultantPageState extends State<ProfileConsultantPage> {
                                     width: 14,
                                   ),
                                   Text(
-                                    'Portfolio- Franco.pdf',
+                                    'Portfolio- Aqeel.pdf',
                                     style: lightText14.copyWith(
                                       color: const Color(0xFF00584B),
                                     ),
@@ -207,8 +208,8 @@ class _ProfileConsultantPageState extends State<ProfileConsultantPage> {
                   left: 21,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(50),
-                    child: Image.asset(
-                      'assets/images/image.png',
+                    child: Image.network(
+                      'https://randomuser.me/api/portraits/men/15.jpg',
                       height: 80,
                     ),
                   ),
@@ -239,13 +240,11 @@ class _ProfileConsultantPageState extends State<ProfileConsultantPage> {
             decoration: BoxDecoration(
                 color: const Color(0xFF00584B),
                 borderRadius: BorderRadius.circular(8.0)),
-            child: const Center(
+            child: Center(
               child: Text(
                 'Daftar Konsultasi',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Color(0xFFF8F8FF),
-                  fontWeight: FontWeight.w500,
+                style: regularText16.copyWith(
+                  color: kColorScheme.background,
                 ),
               ),
             ),
