@@ -31,13 +31,16 @@ Password : dummy password
 
 ## Screenshots
 
-![Splash Screen](./screenshot/splash_screen.PNG)
-![Login](./screenshot/login.PNG)
-![Login Failed](./screenshot/login_failed.PNG)
-![Register](./screenshot/register.PNG)
-![Home Page](./screenshot/home_page.PNG)
-![Investment Page](./screenshot/investment_page.PNG)
-![Consultant Page](./screenshot/consultation_page.PNG)
-![History Page](./screenshot/history_page.PNG)
-![Chat Page](./screenshot/chat.PNG)
-![Detail Chat Page](./screenshot/detail_chat.PNG)
+<div align="center">
+  <img src="screenshots/home.png" width="400" alt="Home Page">
+  <img src="screenshots/register.png" width="400" alt="Register">
+</div>
+
+<div align="center">
+  <img src="screenshots/consult.png" width="400" alt="Consult">
+  <img src="screenshots/investment.png" width="400" alt="Investment">
+</div>
+
+<div align="center">
+  <img src="screenshots/history.png" width="400" alt="History">
+</div>
