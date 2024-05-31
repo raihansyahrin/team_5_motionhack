@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:team_5_motionhack/ui/payment/detail_payment/detail_payment_page.dart';
-import 'package:team_5_motionhack/ui/widgets/custom_app_bar.dart';
+import '../../../common/styles/colors.dart';
+import '../../../common/theme/font.dart';
+import '../detail_payment/detail_payment_page.dart';
+import '../../widgets/custom_app_bar.dart';
 
 class ConfirmationPage extends StatefulWidget {
   const ConfirmationPage({super.key});
@@ -180,13 +182,11 @@ class _ConfirmationPageState extends State<ConfirmationPage> {
             decoration: BoxDecoration(
                 color: const Color(0xFF00584B),
                 borderRadius: BorderRadius.circular(8.0)),
-            child: const Center(
+            child: Center(
               child: Text(
                 'Selanjutnya',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Color(0xFFF8F8FF),
-                  fontWeight: FontWeight.w500,
+                style: regularText16.copyWith(
+                  color: kColorScheme.background,
                 ),
               ),
             ),

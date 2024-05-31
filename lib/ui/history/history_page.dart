@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:team_5_motionhack/common/theme/font.dart';
-import 'package:team_5_motionhack/ui/widgets/banner_history.dart';
+import '../../common/theme/font.dart';
+import '../widgets/banner_history.dart';
 
 class HistoryPage extends StatelessWidget {
   const HistoryPage({super.key});

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:team_5_motionhack/common/theme/font.dart';
-import 'package:team_5_motionhack/ui/investment/form_submission/form_submission_page.dart';
+import '../../../common/styles/colors.dart';
+import '../../../common/theme/font.dart';
+import '../form_submission/form_submission_page.dart';
 
-import 'package:team_5_motionhack/ui/widgets/custom_app_bar.dart';
+import '../../widgets/custom_app_bar.dart';
 
 class ProfileInvestorPage extends StatefulWidget {
   const ProfileInvestorPage({super.key});
@@ -77,11 +78,11 @@ class _ProfileInvestorPageState extends State<ProfileInvestorPage> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Pendidikan',
+                                      'Nama Perusahaan',
                                       style: regularText14,
                                     ),
                                     Text(
-                                      'S2 Akuntansi Universitas Indonesia',
+                                      'Investor Retail PT.SAMPOERNA',
                                       // maxLines: 5,
                                       overflow: TextOverflow.clip,
                                       style: lightText14.copyWith(
@@ -102,13 +103,18 @@ class _ProfileInvestorPageState extends State<ProfileInvestorPage> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Bidang Keahlian',
+                                    'Pengalaman dan keahlian khusus',
                                     style: regularText14,
                                   ),
-                                  Text(
-                                    'Konsultan Keuangan',
-                                    style: lightText14.copyWith(
-                                      color: const Color(0xFF7F7F7F),
+                                  SizedBox(
+                                    width:
+                                        MediaQuery.of(context).size.width - 42,
+                                    child: Text(
+                                      'Menjabat sebagai chairman dalam Komite Pemantau Manajemen Resiko dengan keahlian dalam menganalisa resiko finansial',
+                                      textAlign: TextAlign.justify,
+                                      style: lightText14.copyWith(
+                                        color: const Color(0xFF7F7F7F),
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -204,8 +210,8 @@ class _ProfileInvestorPageState extends State<ProfileInvestorPage> {
                   left: 21,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(50),
-                    child: Image.asset(
-                      'assets/images/image.png',
+                    child: Image.network(
+                      'https://randomuser.me/api/portraits/men/2.jpg',
                       height: 80,
                     ),
                   ),
@@ -236,13 +242,11 @@ class _ProfileInvestorPageState extends State<ProfileInvestorPage> {
             decoration: BoxDecoration(
                 color: const Color(0xFF00584B),
                 borderRadius: BorderRadius.circular(8.0)),
-            child: const Center(
+            child: Center(
               child: Text(
                 'Ajukan Proposal',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Color(0xFFF8F8FF),
-                  fontWeight: FontWeight.w500,
+                style: regularText16.copyWith(
+                  color: kColorScheme.background,
                 ),
               ),
             ),

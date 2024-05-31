@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:team_5_motionhack/common/theme/font.dart';
-import 'package:team_5_motionhack/ui/widgets/bottom_nav_bar.dart';
-import 'package:team_5_motionhack/ui/widgets/custom_app_bar.dart';
+import '../../../common/styles/colors.dart';
+import '../../../common/theme/font.dart';
+import '../../widgets/bottom_nav_bar.dart';
+import '../../widgets/custom_app_bar.dart';
 
 class FormSubmissionPage extends StatelessWidget {
   const FormSubmissionPage({super.key});
@@ -148,25 +149,21 @@ class FormSubmissionPage extends StatelessWidget {
             showDialog(
               context: context,
               builder: (context) {
-                Future.delayed(const Duration(seconds: 3), () {
-                  Navigator.of(context).pop(true);
-                  Navigator.of(context).pushAndRemoveUntil(
-                    MaterialPageRoute(
-                      builder: (context) => const BottomNavBar(
-                        initialPage: 2,
+                Future.delayed(
+                  const Duration(seconds: 3),
+                  () {
+                    Navigator.of(context).pop(true);
+                    Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(
+                        builder: (context) => const BottomNavBar(
+                          initialPage: 1,
+                          isSubmitProposal: true,
+                        ),
                       ),
-                    ),
-                    (route) => false,
-                  );
-                  // Navigator.of(context).pushAndRemoveUntil(
-                  //   MaterialPageRoute(
-                  //     builder: (context) => const InvestmentPage(
-                  //       isSubmitProposal: true,
-                  //     ),
-                  //   ),
-                  //   (route) => false,
-                  // );
-                });
+                      (route) => false,
+                    );
+                  },
+                );
 
                 return Dialog(
                   insetPadding: const EdgeInsets.all(0),
@@ -203,13 +200,11 @@ class FormSubmissionPage extends StatelessWidget {
             decoration: BoxDecoration(
                 color: const Color(0xFF00584B),
                 borderRadius: BorderRadius.circular(8.0)),
-            child: const Center(
+            child: Center(
               child: Text(
                 'Selanjutnya',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Color(0xFFF8F8FF),
-                  fontWeight: FontWeight.w500,
+                style: regularText16.copyWith(
+                  color: kColorScheme.background,
                 ),
               ),
             ),

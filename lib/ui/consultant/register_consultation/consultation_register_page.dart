@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:team_5_motionhack/common/theme/font.dart';
-import 'package:team_5_motionhack/ui/payment/payment_page.dart';
-import 'package:team_5_motionhack/ui/widgets/custom_app_bar.dart';
+import '../../../common/styles/colors.dart';
+import '../../../common/theme/font.dart';
+import '../../payment/payment_page.dart';
+import '../../widgets/custom_app_bar.dart';
+import 'package:intl/intl.dart'; // Import pustaka intl
 
 class RegisterConsultationPage extends StatefulWidget {
   const RegisterConsultationPage({super.key});
@@ -12,9 +14,89 @@ class RegisterConsultationPage extends StatefulWidget {
 }
 
 class _RegisterConsultationPageState extends State<RegisterConsultationPage> {
-  final TextEditingController _tanggal = TextEditingController();
+  final TextEditingController _date = TextEditingController();
   final TextEditingController _waktuMulai = TextEditingController();
   final TextEditingController _waktuSelesai = TextEditingController();
+
+  DateTime selectedDate = DateTime.now();
+
+  Future<void> _selectDate(BuildContext context) async {
+    if (selectedDate.isBefore(DateTime(1901, 1))) {
+      selectedDate = DateTime(1901, 1); // Atur selectedDate ke firstDate
+    }
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: selectedDate,
+      firstDate: DateTime(1901, 1),
+      lastDate: DateTime(2100),
+    );
+
+    if (picked != null && picked != selectedDate) {
+      setState(() {
+        selectedDate = picked;
+
+        // Format tanggal sesuai keinginan
+        DateFormat formatter = DateFormat("EEEE, dd MMMM yyyy");
+        String formattedDate = formatter.format(picked);
+
+        _date.value = TextEditingValue(text: formattedDate);
+      });
+    }
+  }
+
+  Future<void> _selectTime(BuildContext context) async {
+    final TimeOfDay? picked = await showTimePicker(
+      context: context,
+      initialTime: TimeOfDay.fromDateTime(selectedDate),
+    );
+
+    if (picked != null) {
+      setState(() {
+        // Buat DateTime baru dengan menggabungkan tanggal dari selectedDate dengan waktu yang dipilih
+        final newDateTime = DateTime(
+          selectedDate.year,
+          selectedDate.month,
+          selectedDate.day,
+          picked.hour,
+          picked.minute,
+        );
+
+        // Format waktu sesuai keinginan
+        DateFormat formatter = DateFormat("HH:mm WIB");
+        String formattedTime = formatter.format(newDateTime);
+
+        // Mengatur nilai teks pada _waktuMulai menggunakan value
+        _waktuMulai.value = TextEditingValue(text: formattedTime);
+      });
+    }
+  }
+
+  Future<void> _selectTimeEND(BuildContext context) async {
+    final TimeOfDay? picked = await showTimePicker(
+      context: context,
+      initialTime: TimeOfDay.fromDateTime(selectedDate),
+    );
+
+    if (picked != null) {
+      setState(() {
+        // Buat DateTime baru dengan menggabungkan tanggal dari selectedDate dengan waktu yang dipilih
+        final newDateTime = DateTime(
+          selectedDate.year,
+          selectedDate.month,
+          selectedDate.day,
+          picked.hour,
+          picked.minute,
+        );
+
+        // Format waktu sesuai keinginan
+        DateFormat formatter = DateFormat("HH:mm WIB");
+        String formattedTime = formatter.format(newDateTime);
+
+        // Mengatur nilai teks pada _waktuMulai menggunakan value
+        _waktuSelesai.value = TextEditingValue(text: formattedTime);
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,20 +121,30 @@ class _RegisterConsultationPageState extends State<RegisterConsultationPage> {
               const SizedBox(
                 height: 16,
               ),
-              TextFormField(
-                controller: _tanggal,
-                decoration: InputDecoration(
-                  
-                  border: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Color(0xFFABABAB)),
-                    borderRadius: BorderRadius.circular(8.0),
+              GestureDetector(
+                onTap: () => _selectDate(context),
+                child: AbsorbPointer(
+                  child: TextFormField(
+                    controller: _date,
+                    keyboardType: TextInputType.datetime,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderSide: const BorderSide(color: Color(0xFFABABAB)),
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      prefixIcon: const Icon(
+                        Icons.calendar_today_outlined,
+                        color: Color(0xFFABABAB),
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(
+                          vertical: 14.0, horizontal: 5.0),
+                    ),
+
+                    // onTap: () {
+                    //   _selectDate(context);
+
+                    // },
                   ),
-                  prefixIcon: const Icon(
-                    Icons.calendar_today_outlined,
-                    color: Color(0xFFABABAB),
-                  ),
-                  contentPadding: const EdgeInsets.symmetric(
-                      vertical: 14.0, horizontal: 5.0),
                 ),
               ),
               const SizedBox(
@@ -73,23 +165,21 @@ class _RegisterConsultationPageState extends State<RegisterConsultationPage> {
                       SizedBox(
                         width: 154,
                         height: 84,
-                        child: TextFormField(
-                          onTap: () {
-                            DatePickerDialog(
-                              firstDate: DateTime(2020),
-                              lastDate: DateTime(2050),
-                            );
-                          },
-                          controller: _waktuMulai,
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                              borderSide:
-                                  const BorderSide(color: Color(0xFFABABAB)),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            contentPadding: const EdgeInsets.symmetric(
-                              vertical: 14.0,
-                              horizontal: 13.0,
+                        child: GestureDetector(
+                          onTap: () => _selectTime(context),
+                          child: AbsorbPointer(
+                            child: TextFormField(
+                              controller: _waktuMulai,
+                              // keyboardType: TextInputType.datetime,
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                      color: Color(0xFFABABAB)),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                contentPadding: const EdgeInsets.symmetric(
+                                    vertical: 14.0, horizontal: 16.0),
+                              ),
                             ),
                           ),
                         ),
@@ -112,18 +202,21 @@ class _RegisterConsultationPageState extends State<RegisterConsultationPage> {
                       SizedBox(
                         width: 154,
                         height: 84,
-                        child: TextFormField(
-                          controller: _waktuSelesai,
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                color: Color(0xFFABABAB),
+                        child: GestureDetector(
+                          onTap: () => _selectTimeEND(context),
+                          child: AbsorbPointer(
+                            child: TextFormField(
+                              controller: _waktuSelesai,
+                              // keyboardType: TextInputType.t,
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                      color: Color(0xFFABABAB)),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                contentPadding: const EdgeInsets.symmetric(
+                                    vertical: 14.0, horizontal: 16.0),
                               ),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            contentPadding: const EdgeInsets.symmetric(
-                              vertical: 14.0,
-                              horizontal: 13.0,
                             ),
                           ),
                         ),
@@ -157,13 +250,11 @@ class _RegisterConsultationPageState extends State<RegisterConsultationPage> {
             decoration: BoxDecoration(
                 color: const Color(0xFF00584B),
                 borderRadius: BorderRadius.circular(8.0)),
-            child: const Center(
+            child: Center(
               child: Text(
                 'Selanjutnya',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Color(0xFFF8F8FF),
-                  fontWeight: FontWeight.w500,
+                style: regularText16.copyWith(
+                  color: kColorScheme.background,
                 ),
               ),
             ),

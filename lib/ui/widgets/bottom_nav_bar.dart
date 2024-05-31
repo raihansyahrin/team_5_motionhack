@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import '../../common/theme/font.dart';
 
-import 'package:team_5_motionhack/ui/consultant/consultant_page.dart';
-import 'package:team_5_motionhack/ui/history/history_page.dart';
-import 'package:team_5_motionhack/ui/home/home_page.dart';
-import 'package:team_5_motionhack/ui/investment/investment_page.dart';
+import '../consultant/consultant_page.dart';
+import '../history/history_page.dart';
+import '../home/home_page.dart';
+import '../investment/investment_page.dart';
 
 class BottomNavBar extends StatefulWidget {
   final int initialPage;
+  final bool isSubmitProposal;
+
   const BottomNavBar({
     super.key,
     this.initialPage = 0,
+    this.isSubmitProposal = false,
   });
 
   @override
@@ -18,22 +22,42 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
+  // late int _currentIndex;
+  // late bool _proposal;
+
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   _currentIndex = widget.initialPage;
+  //   _proposal = widget.isSubmitProposal;
+  // }
+
+  // final List<Widget> _pages = [
+  //   const HomePage(),
+  //   InvestmentPage(
+  //     isSubmitProposal: _proposal,
+  //   ),
+  //   const ConsultantPage(),
+  //   const HistoryPage(),
+  // ];
   late int _currentIndex;
+  late bool _proposal;
+  late List<Widget> _pages; // Move _pages declaration here
 
   @override
   void initState() {
     super.initState();
     _currentIndex = widget.initialPage;
+    _proposal = widget.isSubmitProposal;
+    _pages = [
+      const HomePage(),
+      InvestmentPage(
+        isSubmitProposal: _proposal,
+      ),
+      const ConsultantPage(),
+      const HistoryPage(),
+    ];
   }
-
-  final List<Widget> _pages = [
-    const HomePage(),
-    const InvestmentPage(
-      isSubmitProposal: false,
-    ),
-    const ConsultantPage(),
-    const HistoryPage(),
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -48,11 +72,13 @@ class _BottomNavBarState extends State<BottomNavBar> {
         selectedItemColor: const Color(0xFF00584B),
         unselectedItemColor: Colors.grey,
         showSelectedLabels: true,
- 
-        selectedLabelStyle: const TextStyle(height: 2.5, fontSize: 12),
-        unselectedLabelStyle: const TextStyle(fontSize: 12, height: 2.5),
+        selectedLabelStyle: lightText12.copyWith(
+          height: 2.5,
+        ),
+        unselectedLabelStyle: lightText12.copyWith(
+          height: 2.5,
+        ),
         backgroundColor: Colors.transparent,
-
         onTap: (index) {
           setState(() {
             _currentIndex = index;

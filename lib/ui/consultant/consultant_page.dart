@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:team_5_motionhack/common/theme/font.dart';
-import 'package:team_5_motionhack/ui/widgets/list_consultant_widget.dart';
+import '../../common/theme/font.dart';
+import '../../data/model/consultant.dart';
+import '../widgets/list_consultant_widget.dart';
 
 class ConsultantPage extends StatelessWidget {
   const ConsultantPage({super.key});
@@ -29,12 +30,15 @@ class ConsultantPage extends StatelessWidget {
                   shrinkWrap: true,
                   padding: EdgeInsetsDirectional.zero,
                   physics: const NeverScrollableScrollPhysics(),
-                  itemCount: 4,
+                  itemCount: consultantList.length,
                   itemBuilder: (context, index) {
-                    return const ListConsultantWidget(
-                      nama: 'Carla',
-                      posisi: 'PT Sampoerna',
-                      pic: 'assets/PPic.png',
+                    final ConsultantModel consultantModel =
+                        consultantList[index];
+                    return ListConsultantWidget(
+                      nama: consultantModel.nama,
+                      posisi: consultantModel.posisi,
+                      pic: consultantModel.pic,
+                      isConsultant: consultantModel.isConsultant,
                     );
                   },
                 ),

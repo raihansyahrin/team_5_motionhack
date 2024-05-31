@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:team_5_motionhack/common/theme/font.dart';
+import '../../common/theme/font.dart';
 
 class VideoEducationCard extends StatelessWidget {
   final String title;

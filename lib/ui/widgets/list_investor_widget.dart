@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:team_5_motionhack/common/theme/font.dart';
-import 'package:team_5_motionhack/ui/investment/profile_investor/profile_investor_page.dart';
+import '../../common/theme/font.dart';
+import '../investment/profile_investor/profile_investor_page.dart';
 
 class ListInvestorWidget extends StatefulWidget {
   final String nama;
@@ -56,7 +56,7 @@ class _ListInvestorWidgetState extends State<ListInvestorWidget> {
               //   'assets/images/image.png',
               //   height: 42,
               // ),
-              child: Image.asset(
+              child: Image.network(
                 widget.pic,
                 height: 42,
               ),

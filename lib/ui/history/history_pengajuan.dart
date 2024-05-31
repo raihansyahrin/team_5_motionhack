@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'package:team_5_motionhack/ui/widgets/banner_history.dart';
-
-import 'package:team_5_motionhack/ui/widgets/header_navigator.dart';
+import '../widgets/banner_history.dart';
+import '../widgets/header_navigator.dart';
 
 class HistoryPengajuan extends StatelessWidget {
   const HistoryPengajuan({super.key});

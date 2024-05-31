@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:team_5_motionhack/common/theme/font.dart';
+import '../../common/theme/font.dart';
 
 class ProfileItem extends StatefulWidget {
   const ProfileItem({super.key});

@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:team_5_motionhack/common/styles/colors.dart';
-import 'package:team_5_motionhack/common/theme/font.dart';
-import 'package:team_5_motionhack/ui/chat/chat_page.dart';
-import 'package:team_5_motionhack/ui/laporan/laporan_mingguan.dart';
-import 'package:team_5_motionhack/ui/notification/notification_page.dart';
-import 'package:team_5_motionhack/ui/profile/profile_page.dart';
-import 'package:team_5_motionhack/ui/widgets/list_article_education.dart';
-import 'package:team_5_motionhack/ui/widgets/list_consultant_widget.dart';
-import 'package:team_5_motionhack/ui/widgets/video_education_widget.dart';
+import '../../common/styles/colors.dart';
+import '../../common/theme/font.dart';
+import '../../data/model/consultant.dart';
+import '../chat/chat_page.dart';
+import '../laporan/laporan_mingguan.dart';
+import '../notification/notification_page.dart';
+import '../profile/profile_page.dart';
+import '../widgets/list_article_education.dart';
+import '../widgets/list_consultant_widget.dart';
+import '../widgets/video_education_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -82,9 +83,13 @@ class _HomePageState extends State<HomePage> {
                                 style: regularText12,
                               ),
                               Text(
-                                '12.00, 5 Aprill 2024',
+                                'Belum Ada',
                                 style: lightText12,
                               ),
+                              // Text(
+                              //   '12.00, 5 Aprill 2024',
+                              //   style: lightText12,
+                              // ),
                             ],
                           )
                         ],
@@ -182,12 +187,15 @@ class _HomePageState extends State<HomePage> {
                     shrinkWrap: true,
                     padding: EdgeInsetsDirectional.zero,
                     physics: const NeverScrollableScrollPhysics(),
-                    itemCount: 2,
+                    itemCount: 3,
                     itemBuilder: (context, index) {
-                      return const ListConsultantWidget(
-                        nama: 'Carla',
-                        posisi: 'PT Sampoerna',
-                        pic: 'assets/PPic.png',
+                      final ConsultantModel consultantModel =
+                          consultantList[index];
+                      return ListConsultantWidget(
+                        nama: consultantModel.nama,
+                        posisi: consultantModel.posisi,
+                        pic: consultantModel.pic,
+                        isConsultant: consultantModel.isConsultant,
                       );
                     },
                   ),
@@ -303,7 +311,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       child: const Center(
                         child: Text(
-                          '2',
+                          '1',
                           style: TextStyle(
                             fontSize: 10,
                             color: Colors.white,
